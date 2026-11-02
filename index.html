@@ -14,7 +14,7 @@
   <meta property="og:image" content="https://radiomendez.github.io/assets/vista-previa-mendez-tv-radio-online-v1.5.5.jpg">
   <link rel="icon" type="image/png" href="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png">
   <link rel="apple-touch-icon" href="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png">
-  <meta name="app-version" content="1.6.8">
+  <meta name="app-version" content="1.6.9">
   <title>Radio Méndez | ¡La radio que te mueve!</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -776,6 +776,14 @@
     @media(max-width:640px){.program-midday .program-logo-box img{max-height:240px}}
 
 
+
+    /* 1.6.9 — Ranking como pantalla independiente, solo Top 10 */
+    .ranking-intro{padding:clamp(28px,4vw,48px) 0 17px;min-height:0}
+    .ranking-intro h1{margin:9px 0 10px;font-size:clamp(32px,5vw,54px);letter-spacing:-1.5px;line-height:1.1;color:#fff}
+    .ranking-intro h1 span{color:#57d7ff}
+    .ranking-intro p{margin:0 0 8px;color:#b6d0ee;font-size:14px;line-height:1.6}
+    [data-site-view="ranking"]{scroll-margin-top:125px}
+    @media(max-width:520px){.ranking-intro{padding-top:24px}.ranking-intro p{font-size:12px}}
 </style>
   <link rel="stylesheet" href="./radio-visual.css?v=1.6.7">
   <script src="./config.js?v=1.6.5-stream8474"></script>
@@ -799,7 +807,7 @@
   <div class="container nav">
     <a class="brand" href="#inicio" aria-label="Radio Méndez, inicio"><img src="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png" alt=""><span class="brand-name">MÉNDEZ<small class="brand-sub">TV &amp; RADIO ONLINE</small></span></a>
     <nav class="nav-links" id="site-navigation" aria-label="Navegación principal">
-      <a href="#inicio">INICIO</a><a href="#nosotros">NOSOTROS</a><a href="#mendez-tv">NOTICIAS</a><a href="#top10">RANKING</a><a href="#videos">VIDEOS</a>
+      <a href="#inicio">INICIO</a><a href="#nosotros">NOSOTROS</a><a href="#noticias">NOTICIAS</a><a href="#ranking">RANKING</a><a href="#mendez-tv">MÉNDEZ TV</a>
     </nav>
     <a class="station-status" href="#radio" aria-label="Ir a Radio Méndez en vivo">
       <span class="station-status-name">RADIO MÉNDEZ</span>
@@ -821,7 +829,7 @@
     <div class="portal-brand-mark"><img src="./assets/logo-mendez-tv-radio-online-v1.5.5.png" alt="Radio Méndez TV y Radio Online" loading="eager"><span>UNA PRODUCCIÓN DE MÉNDEZ TV</span></div>
   </div>
   <div class="portal-shortcuts" aria-label="Secciones de Radio Méndez">
-    <a class="portal-tile" href="#radio"><span class="portal-tile-icon">♫</span><strong>Radio en vivo</strong><small>La mañana, El Vacilón del Mediodía, El Vacile de Villa y Top 10</small><span class="portal-tile-arrow">Explorar ↗</span></a>
+    <a class="portal-tile" href="#radio"><span class="portal-tile-icon">♫</span><strong>Radio en vivo</strong><small>La mañana, El Vacilón del Mediodía y El Vacile de Villa</small><span class="portal-tile-arrow">Explorar ↗</span></a>
     <a class="portal-tile" href="#mendez-tv"><span class="portal-tile-icon">▤</span><strong>Méndez TV</strong><small>Noticias, reportajes y actualidad</small><span class="portal-tile-arrow">Ver noticias ↗</span></a>
     <a class="portal-tile" href="#programas"><span class="portal-tile-icon">◉</span><strong>Programas</strong><small>Entrevistas, humor, Zona Deportiva y videos</small><span class="portal-tile-arrow">Ver programación ↗</span></a>
     <a class="portal-tile" href="#deportes"><span class="portal-tile-icon">⚽</span><strong>Deportes</strong><small>Actualidad deportiva de la región</small><span class="portal-tile-arrow">Ir a deportes ↗</span></a>
@@ -947,7 +955,7 @@
       <a class="secondary" href="https://www.facebook.com/mendeztvec" target="_blank" rel="noopener noreferrer">Seguir noticias en Facebook ↗</a>
     </div>
     <p class="tv-news-summary">Sigue las noticias de Méndez, Patuca, el cantón Santiago y Morona Santiago: actualidad local, comunidad, deportes e información de interés público.</p>
-    <div class="tv-news-filterbar" role="group" aria-label="Filtrar noticias de Méndez TV">
+    <div id="noticias" class="tv-news-filterbar" role="group" aria-label="Filtrar noticias de Méndez TV">
       <button type="button" class="tv-news-filter" data-category="Todas" aria-pressed="true">Todo</button>
       <button type="button" class="tv-news-filter" data-category="Noticias" aria-pressed="false">Noticias</button>
       <button type="button" class="tv-news-filter" data-category="Comunidad" aria-pressed="false">Comunidad</button>
@@ -964,7 +972,12 @@
   <div class="tv-news-dialog-content"><div class="tv-news-meta" id="tv-dialog-meta"></div><h2 id="tv-dialog-title"></h2><div id="tv-dialog-body"></div><a id="tv-dialog-link" target="_blank" rel="noopener noreferrer" hidden></a></div>
 </dialog>
 
-<div data-site-view="radio" class="container ranking-jump" aria-label="Navegar por los rankings"><a href="#top10">🇪🇨 Top 10 ecuatoriano</a><a href="#top10-internacional">🌎 Top 10 internacional</a></div>
+<section class="container ranking-intro" id="ranking" data-site-view="ranking" aria-labelledby="ranking-page-title">
+  <span class="overline">RADIO MÉNDEZ · LISTAS MUSICALES</span>
+  <h1 id="ranking-page-title">RANKING <span>TOP 10</span></h1>
+  <p>Los temas del Top 10 Ecuatoriano y Top 10 Internacional, en una sola pantalla.</p>
+</section>
+<div data-site-view="ranking" class="container ranking-jump" aria-label="Navegar por los rankings"><a href="#top10">🇪🇨 Top 10 ecuatoriano</a><a href="#top10-internacional">🌎 Top 10 internacional</a></div>
 
 <section class="container videos-section" id="videos" data-site-view="programas" aria-labelledby="videos-title">
   <div class="videos-heading">
@@ -1002,8 +1015,8 @@
     </aside>
   </div>
 </section>
-<div data-site-view="radio" class="container rankings-grid" aria-label="Rankings musicales de Radio Méndez">
-<section class="section" id="top10" data-site-view="radio" aria-labelledby="top10-titulo">
+<div data-site-view="ranking" class="container rankings-grid" aria-label="Rankings musicales de Radio Méndez">
+<section class="section" id="top10" data-site-view="ranking" aria-labelledby="top10-titulo">
   <div class="ranking-head">
     <div>
       <span class="overline">EL TALENTO DE NUESTRA TIERRA</span>
@@ -1028,7 +1041,7 @@
     <p class="ranking-footnote">Selección editorial de Radio Méndez · Octubre 2026. El orden no representa un ranking oficial de reproducciones. Los íconos abren YouTube o Spotify en otra pestaña.</p>
   </div>
 </section>
-<section class="section ranking-international" id="top10-internacional" data-site-view="radio" aria-labelledby="top10-internacional-titulo">
+<section class="section ranking-international" id="top10-internacional" data-site-view="ranking" aria-labelledby="top10-internacional-titulo">
   <div class="ranking-head">
     <div>
       <span class="overline">LOS ÉXITOS QUE SUENAN EN NUESTRO PAÍS</span>
@@ -1203,7 +1216,7 @@
   </div>
 </section>
 </main>
-<footer><nav class="container site-footer-links" aria-label="Otras secciones"><a href="#radio">Radio en vivo</a><a href="#programas">Programas</a><a href="#deportes">Deportes</a><a href="#servicios">Servicios</a><a href="#auspiciantes">Auspiciantes</a><a href="#apoyar">Apoyar</a></nav><div class="container footer-row"><span><strong>RADIO MÉNDEZ</strong> · ¡La radio que te mueve! · Una producción de Méndez TV.</span><span>© <span id="year"></span> · Desde Morona Santiago para el mundo · Catálogo de servicios · <span class="version-label">v1.6.8 · 2026</span>.</span></div></footer>
+<footer><nav class="container site-footer-links" aria-label="Otras secciones"><a href="#radio">Radio en vivo</a><a href="#ranking">Ranking</a><a href="#programas">Programas y videos</a><a href="#deportes">Deportes</a><a href="#servicios">Servicios</a><a href="#auspiciantes">Auspiciantes</a><a href="#apoyar">Apoyar</a></nav><div class="container footer-row"><span><strong>RADIO MÉNDEZ</strong> · ¡La radio que te mueve! · Una producción de Méndez TV.</span><span>© <span id="year"></span> · Desde Morona Santiago para el mundo · Catálogo de servicios · <span class="version-label">v1.6.9 · 2026</span>.</span></div></footer>
 
 <div class="radio-mini" id="radio-mini" aria-label="Reproductor permanente Radio Méndez" hidden>
   <a class="radio-mini-label" href="#radio" aria-label="Ir al reproductor principal de Radio Méndez"><img src="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png" alt=""><span><strong class="radio-mini-title">Radio Méndez</strong><small class="radio-mini-sub" id="radio-mini-sub">¡La radio que te mueve!</small><small class="radio-mini-program" id="radio-mini-program">Programación: 09h–12h · 12h–14h · 20h–22h</small></span></a>
@@ -1554,7 +1567,7 @@
   $('donate-bank-fallback').href=donationWhatsapp+'?text='+encodeURIComponent('Hola, quisiera los datos para apoyar a Radio Méndez por transferencia.');
  }
 
- if('serviceWorker' in navigator && location.protocol==='https:'){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=1.6.8').catch(()=>{}))}
+ if('serviceWorker' in navigator && location.protocol==='https:'){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=1.6.9').catch(()=>{}))}
 })();
 </script>
 
@@ -1610,9 +1623,9 @@
 /* Navegación por vistas: un solo documento y un solo audio HTML5; cada URL # abre una pantalla propia. */
 (()=>{
  'use strict';
- const views=['inicio','nosotros','radio','mendez-tv','programas','deportes','servicios','auspiciantes','apoyar'];
- const routes={inicio:'inicio',nosotros:'nosotros',radio:'radio','programacion-radio':'radio',top10:'radio','top10-internacional':'radio',programas:'programas',
-   'mendez-tv':'mendez-tv',videos:'programas',deportes:'deportes',servicios:'servicios',contacto:'servicios',
+ const views=['inicio','nosotros','radio','ranking','mendez-tv','programas','deportes','servicios','auspiciantes','apoyar'];
+ const routes={inicio:'inicio',nosotros:'nosotros',radio:'radio','programacion-radio':'radio',ranking:'ranking',top10:'ranking','top10-internacional':'ranking',programas:'programas',
+   'mendez-tv':'mendez-tv',noticias:'mendez-tv',videos:'programas',deportes:'deportes',servicios:'servicios',contacto:'servicios',
    publicidad:'servicios',auspiciantes:'auspiciantes',apoyar:'apoyar',redes:'apoyar'};
  const all=Array.from(document.querySelectorAll('[data-site-view]'));
  const nav=Array.from(document.querySelectorAll('#site-navigation a[href^="#"]'));
@@ -1621,8 +1634,8 @@
    const view=routes[raw]||'inicio';
    document.body.dataset.currentView=view;
    all.forEach(node=>{if(node.dataset.siteView===view){node.setAttribute('data-site-active','');node.removeAttribute('aria-hidden')}else{node.removeAttribute('data-site-active');node.setAttribute('aria-hidden','true')}});
-   nav.forEach(a=>{const h=a.getAttribute('href');if(h==='#'+raw || (h==='#inicio'&&view==='inicio') || (h==='#mendez-tv'&&view==='mendez-tv'))a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
-   document.title=(view==='inicio'?'Radio Méndez':({'nosotros':'Nosotros','radio':'Radio en vivo','mendez-tv':'Méndez TV · Noticias','programas':'Programas','deportes':'Deportes','servicios':'Servicios','auspiciantes':'Auspiciantes','apoyar':'Apoyar'}[view]+' | Radio Méndez'))+' — ¡La radio que te mueve!';
+   nav.forEach(a=>{const h=a.getAttribute('href');if(h==='#'+raw || (h==='#ranking'&&view==='ranking') || (h==='#mendez-tv'&&view==='mendez-tv'&&raw!=='noticias'))a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
+   document.title=(view==='inicio'?'Radio Méndez':({'nosotros':'Nosotros','radio':'Radio en vivo','ranking':'Ranking · Top 10','mendez-tv':'Méndez TV · Noticias','programas':'Programas','deportes':'Deportes','servicios':'Servicios','auspiciantes':'Auspiciantes','apoyar':'Apoyar'}[view]+' | Radio Méndez'))+' — ¡La radio que te mueve!';
    const target=document.getElementById(raw);
    if(!initial && raw!==view && target && target.getAttribute('data-site-active')!==null){target.scrollIntoView({block:'start',behavior:'instant'})}
    else window.scrollTo({top:0,behavior:'instant'});

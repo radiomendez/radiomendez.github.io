@@ -1,0 +1,17 @@
+RADIO MÉNDEZ — ACTUALIZACIÓN v1.6.9
+
+Cambios:
+- Menú superior: INICIO · NOSOTROS · NOTICIAS · RANKING · MÉNDEZ TV.
+- RANKING abre una pantalla propia con SOLO Top 10 Ecuatoriano y Top 10 Internacional.
+- NOTICIAS va a la zona de noticias dentro de Méndez TV; MÉNDEZ TV abre esa sección desde arriba.
+- Se retira la opción VIDEOS del encabezado. Los videos siguen dentro de Programas.
+- Se mantienen la señal contratada 8474, el reproductor continuo, noticias, PayPal, auspiciantes y programación.
+
+SUBIDA A GITHUB:
+1. Descomprimir el ZIP.
+2. Subir index.html, sw.js y VERSION.txt al directorio raíz, reemplazando los anteriores.
+3. El archivo LEEME-v1.6.9.txt es opcional.
+4. Confirmar los cambios (Commit changes).
+5. Entrar a https://radiomendez.github.io/#ranking y recargar si es necesario.
+
+IMPORTANTE: NO reemplaces config.js. No forma parte de esta actualización.
