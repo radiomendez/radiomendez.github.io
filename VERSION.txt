@@ -1,3 +1,4 @@
-Radio Méndez — versión 1.6.10
+Radio Méndez · v1.6.11
 Fecha: 2026-11-02
-Novedad: Banner y texto en Nosotros; Servicios, publicidad y contacto dentro de Méndez TV.
+Cambios: tema blanco y azul + pie de página minimalista.
+Streaming: sin cambios (se conserva config.js).

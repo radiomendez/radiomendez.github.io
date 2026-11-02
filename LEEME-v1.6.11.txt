@@ -1,0 +1,15 @@
+RADIO MÉNDEZ · ACTUALIZACIÓN v1.6.11
+
+Cambios:
+- Diseño general blanco y azul, conservando las tarjetas de radio con alto contraste.
+- Pie de página sin enlaces, solo Radio Méndez, eslogan, derechos y versión.
+- No cambia el streaming, PayPal, ranking, noticias ni la programación.
+
+INSTALACIÓN EN GITHUB
+Descomprime y sube a la raíz del repositorio estos archivos:
+  index.html
+  tema-blanco-azul.css
+  sw.js
+  VERSION.txt (opcional)
+
+NO reemplaces config.js. Si alguna pantalla conserva el diseño anterior, actualiza el navegador con Ctrl+F5.
