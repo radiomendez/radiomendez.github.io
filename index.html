@@ -14,7 +14,7 @@
   <meta property="og:image" content="https://radiomendez.github.io/assets/vista-previa-mendez-tv-radio-online-v1.5.5.jpg">
   <link rel="icon" type="image/png" href="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png">
   <link rel="apple-touch-icon" href="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png">
-  <meta name="app-version" content="1.6.15">
+  <meta name="app-version" content="1.6.16">
   <title>Radio Méndez | ¡La radio que te mueve!</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -799,7 +799,7 @@
 </style>
   <link rel="stylesheet" href="./radio-visual.css?v=1.6.14">
   <link rel="stylesheet" href="./reproductor-1614.css?v=1.6.14">
-  <link rel="stylesheet" href="./inicio-compacto-1615.css?v=1.6.15">
+  <link rel="stylesheet" href="./inicio-compacto-1615.css?v=1.6.16">
   <script src="./config.js?v=1.6.5-stream8474"></script>
   <script src="./top10.js?v=1.3.2"></script>
   <script src="./videos.js?v=1.3.2"></script>
@@ -819,9 +819,9 @@
 <div class="backdrop" aria-hidden="true"></div>
 <header class="site-header">
   <div class="container nav">
-    <a class="brand" href="#inicio" aria-label="Radio Méndez, inicio"><img src="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png" alt=""><span class="brand-name">MÉNDEZ<small class="brand-sub">TV &amp; RADIO ONLINE</small></span></a>
+    <a class="brand" href="#inicio" aria-label="Radio Méndez, página principal"><img src="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png" alt=""><span class="brand-name">MÉNDEZ<small class="brand-sub">TV &amp; RADIO ONLINE</small></span></a>
     <nav class="nav-links" id="site-navigation" aria-label="Navegación principal">
-      <a href="#inicio">INICIO</a><a href="#nosotros">NOSOTROS</a><a href="#noticias">NOTICIAS</a><a href="#ranking">RANKING</a><a href="#mendez-tv">MÉNDEZ TV</a>
+      <a href="#inicio">RADIO MÉNDEZ</a><a href="#nosotros">NOSOTROS</a><a href="#ranking">RANKING</a><a href="#mendez-tv">MÉNDEZ TV</a>
     </nav>
     <a class="station-status" href="#inicio" aria-label="Ir a Radio Méndez en vivo">
       <span class="station-status-name">RADIO MÉNDEZ</span>
@@ -830,7 +830,7 @@
   </div>
 </header>
 <main id="site-main">
-<section class="container portal-home portal-home-compact" id="inicio" data-site-view="inicio" data-site-active="true" aria-label="Inicio de Radio Méndez">
+<section class="container portal-home portal-home-compact" id="inicio" data-site-view="inicio" data-site-active="true" aria-label="Radio Méndez, página principal">
   <section class="home-mixed-showcase" aria-labelledby="home-banners-title">
     <div class="home-banners-heading"><span class="overline">PROGRAMACIÓN Y AUSPICIANTES</span><h2 id="home-banners-title">En Radio Méndez</h2><span class="home-banners-tag">Novedades y marcas que nos acompañan</span></div>
     <div class="sponsor-display embedded home-primary-carousel" data-sponsor-carousel data-sponsor-location="inicio" aria-label="Carrusel de programas y auspiciantes alternados"></div>
@@ -1236,7 +1236,7 @@
 </section>
 
 </main>
-<footer class="site-footer-clean"><div class="container footer-row"><span><strong>RADIO MÉNDEZ</strong> · ¡La radio que te mueve!</span><span>© <span id="year"></span> · Todos los derechos reservados · <strong class="version-label">v1.6.15</strong></span></div></footer>
+<footer class="site-footer-clean"><div class="container footer-row"><span><strong>RADIO MÉNDEZ</strong> · ¡La radio que te mueve!</span><span>© <span id="year"></span> · Todos los derechos reservados · <strong class="version-label">v1.6.16</strong></span></div></footer>
 
 <div class="radio-mini" id="radio-mini" aria-label="Reproductor permanente Radio Méndez" hidden>
   <div class="radio-mini-bar">
@@ -1669,7 +1669,7 @@
    const view=routes[raw]||'inicio';
    document.body.dataset.currentView=view;
    all.forEach(node=>{if(node.dataset.siteView===view){node.setAttribute('data-site-active','');node.removeAttribute('aria-hidden')}else{node.removeAttribute('data-site-active');node.setAttribute('aria-hidden','true')}});
-   nav.forEach(a=>{const h=a.getAttribute('href');if(h==='#'+raw || (h==='#ranking'&&view==='ranking') || (h==='#mendez-tv'&&view==='mendez-tv'&&raw!=='noticias'))a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
+   nav.forEach(a=>{const h=a.getAttribute('href');if(h==='#'+raw || (h==='#ranking'&&view==='ranking') || (h==='#mendez-tv'&&view==='mendez-tv'))a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
    document.title=(view==='inicio'?'Radio Méndez':({'nosotros':'Nosotros','radio':'Radio en vivo','ranking':'Ranking · Top 10','mendez-tv':'Méndez TV · Noticias y servicios','programas':'Programas','deportes':'Deportes','servicios':'Servicios','auspiciantes':'Auspiciantes','apoyar':'Apoyar'}[view]+' | Radio Méndez'))+' — ¡La radio que te mueve!';
    const target=document.getElementById(raw);
    if(!initial && raw!==view && target && target.getAttribute('data-site-active')!==null){target.scrollIntoView({block:'start',behavior:'instant'})}
@@ -1713,7 +1713,7 @@
  tick();setInterval(tick,20000);
 })();
 </script>
-<script src="./mejoras.js?v=1.6.15"></script>
+<script src="./mejoras.js?v=1.6.16"></script>
 <script src="./radio-visual.js?v=1.6.14"></script>
 <script src="./reproductor-1614.js?v=1.6.14"></script>
 </body>

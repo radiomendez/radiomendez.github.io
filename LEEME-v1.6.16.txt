@@ -1,0 +1,17 @@
+RADIO MÉNDEZ · ACTUALIZACIÓN v1.6.16
+
+CAMBIOS
+- La pestaña INICIO ahora se llama RADIO MÉNDEZ y sigue abriendo #inicio.
+- Se elimina NOTICIAS del menú principal, porque sus publicaciones ya se consultan en MÉNDEZ TV.
+- Los enlaces antiguos a #noticias continúan abriendo Méndez TV para evitar enlaces rotos.
+- Se conserva el carrusel de programas/auspiciantes, reproductor compacto, streaming, ranking y PayPal.
+
+PARA SUBIR A GITHUB
+Descomprime el ZIP de actualización y sube a la raíz del repositorio:
+  index.html
+  sw.js
+  VERSION.txt (opcional)
+  LEEME-v1.6.16.txt (opcional)
+Reemplaza los anteriores y confirma Commit changes.
+
+NO reemplaces config.js. Mantén tu configuración actual de SonicPanel.

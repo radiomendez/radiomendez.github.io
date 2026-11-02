@@ -1,4 +1,4 @@
-Radio Méndez · v1.6.15
+Radio Méndez · v1.6.16
 Fecha: 2026-11-02
-Cambios: Inicio reordenado, carrusel mixto 3 segundos, reproductor compacto solo en Inicio.
-Streaming: se conserva config.js (puerto 8474).
+Cambios: INICIO pasa a RADIO MÉNDEZ en la navegación y se elimina el acceso NOTICIAS independiente. Las noticias se conservan dentro de MÉNDEZ TV.
+Streaming: sin cambios; conservar config.js actual.
