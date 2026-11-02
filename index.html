@@ -14,7 +14,7 @@
   <meta property="og:image" content="https://radiomendez.github.io/assets/vista-previa-mendez-tv-radio-online-v1.5.5.jpg">
   <link rel="icon" type="image/png" href="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png">
   <link rel="apple-touch-icon" href="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png">
-  <meta name="app-version" content="1.6.9">
+  <meta name="app-version" content="1.6.10">
   <title>Radio Méndez | ¡La radio que te mueve!</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -784,6 +784,18 @@
     .ranking-intro p{margin:0 0 8px;color:#b6d0ee;font-size:14px;line-height:1.6}
     [data-site-view="ranking"]{scroll-margin-top:125px}
     @media(max-width:520px){.ranking-intro{padding-top:24px}.ranking-intro p{font-size:12px}}
+
+    /* v1.6.10 · Nosotros: banner original primero, contenido institucional después */
+    .about-page{padding:clamp(18px,3vw,36px) 0 78px;}
+    .about-shell{max-width:1120px;margin-inline:auto;overflow:hidden;border-radius:26px;background:linear-gradient(155deg,rgba(11,37,94,.91),rgba(3,15,45,.95));border:1px solid rgba(81,159,240,.29);box-shadow:0 20px 56px rgba(0,0,0,.22);}
+    .about-banner{display:block;width:100%;height:auto;aspect-ratio:10/3;object-fit:contain;background:#072b6b;}
+    .about-content{padding:clamp(22px,4vw,46px);}
+    .about-content h1{font-size:clamp(27px,4.2vw,45px);line-height:1.13;letter-spacing:-1.1px;margin:13px 0 19px;}
+    .about-content p{color:#c7dbf0;line-height:1.85;font-size:clamp(14px,1.45vw,16px);max-width:850px;margin:0 0 16px;}
+    .about-content p strong{color:#fff;}
+    #servicios[data-site-view="mendez-tv"]{padding-top:42px;border-top:1px solid rgba(81,159,240,.15);}
+    #contacto[data-site-view="mendez-tv"]{padding-bottom:56px;}
+    @media(max-width:580px){.about-page{padding-top:18px}.about-shell{border-radius:16px}.about-content{padding:22px 19px 27px}.about-content h1{font-size:28px}.about-content p{line-height:1.75}}
 </style>
   <link rel="stylesheet" href="./radio-visual.css?v=1.6.7">
   <script src="./config.js?v=1.6.5-stream8474"></script>
@@ -840,15 +852,12 @@
 
 <section class="container about-page" id="nosotros" data-site-view="nosotros" aria-labelledby="about-heading">
   <div class="about-shell">
-    <span class="overline">CONOCE NUESTRO MEDIO</span>
-    <h1 id="about-heading">Nosotros · Radio Méndez</h1>
-    <p><strong>Radio Méndez</strong> es una señal digital desde Morona Santiago, Ecuador. Compartimos música, entretenimiento y programación con la identidad de <strong>¡La radio que te mueve!</strong></p>
-    <p>Somos una producción de <strong>Méndez TV</strong>, medio digital que también presenta noticias, reportajes, entrevistas y contenidos de nuestra comunidad.</p>
-    <div class="about-links">
-      <a class="primary" href="#radio">▶ Escuchar radio</a>
-      <a class="secondary" href="#mendez-tv">Leer noticias</a>
-      <a class="secondary" href="#programas">Nuestros programas</a>
-      <a class="secondary" href="#servicios">Servicios y contacto</a>
+    <img class="about-banner" src="./assets/banner-nosotros-mendez-tv-v1.6.10.png" alt="MÉNDEZ TV — TV y Radio Online" width="1000" height="300" loading="eager" decoding="async">
+    <div class="about-content">
+      <span class="overline">CONOCE NUESTRO MEDIO</span>
+      <h1 id="about-heading">Nosotros · Radio Méndez</h1>
+      <p><strong>Radio Méndez</strong> es una señal digital desde Morona Santiago, Ecuador. Compartimos música, entretenimiento y programación con la identidad de <strong>¡La radio que te mueve!</strong></p>
+      <p>Somos una producción de <strong>Méndez TV</strong>, medio digital que también presenta noticias, reportajes, entrevistas y contenidos de nuestra comunidad.</p>
     </div>
   </div>
 </section>
@@ -962,7 +971,7 @@
       <button type="button" class="tv-news-filter" data-category="Deportes" aria-pressed="false">Deportes</button>
     </div>
     <div class="tv-news-grid" id="tv-news-list" aria-live="polite"><div class="tv-news-empty">Cargando publicaciones de Méndez TV…</div></div>
-    <div class="tv-news-bottom"><a href="https://www.facebook.com/mendeztvec" target="_blank" rel="noopener noreferrer">Facebook Méndez TV ↗</a><a href="https://www.youtube.com/@mendeztvoficial" target="_blank" rel="noopener noreferrer">Nuestro canal de YouTube ↗</a><a href="#contacto">Enviar información o comunicado ↗</a></div>
+    <div class="tv-news-bottom"><a href="https://www.facebook.com/mendeztvec" target="_blank" rel="noopener noreferrer">Facebook Méndez TV ↗</a><a href="https://www.youtube.com/@mendeztvoficial" target="_blank" rel="noopener noreferrer">Nuestro canal de YouTube ↗</a><a href="#servicios">Servicios de Méndez TV ↗</a><a href="#contacto">Enviar información o comunicado ↗</a></div>
   </div>
   <div class="sponsor-display embedded" data-sponsor-carousel data-sponsor-location="mendez-tv" aria-label="Auspiciantes de Méndez TV"></div>
 </section>
@@ -971,6 +980,100 @@
   <img class="tv-news-dialog-image" id="tv-dialog-image" src="" alt="" hidden>
   <div class="tv-news-dialog-content"><div class="tv-news-meta" id="tv-dialog-meta"></div><h2 id="tv-dialog-title"></h2><div id="tv-dialog-body"></div><a id="tv-dialog-link" target="_blank" rel="noopener noreferrer" hidden></a></div>
 </dialog>
+
+<section class="container services-section" id="servicios" data-site-view="mendez-tv" aria-labelledby="servicios-titulo">
+  <div class="services-head">
+    <div>
+      <span class="overline">CATÁLOGO INTERACTIVO</span>
+      <h2 id="servicios-titulo">Servicios de <span>Méndez TV</span></h2>
+      <p>Explora nuestros servicios de producción, publicidad y difusión. Cada opción incluye un botón directo para cotizar por WhatsApp y conversar de inmediato con Méndez TV.</p>
+    </div>
+    <div class="services-tip">💬 Todos los botones van directo a WhatsApp</div>
+  </div>
+  <div class="services-grid">
+    <article class="service-card">
+      <span class="service-kicker"><i></i> Comunidad</span>
+      <h3>Posteo solidario</h3>
+      <p>Difundimos denuncias, comunicados y avisos de interés general para apoyar a la comunidad y dar visibilidad a información importante.</p>
+      <a class="service-cta" data-service-title="Posteo solidario" href="#" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.27-.13-1.6-.79-1.84-.88-.25-.09-.43-.13-.61.14-.18.26-.7.88-.86 1.06-.16.18-.31.2-.58.07-.27-.13-1.13-.42-2.16-1.35-.8-.71-1.33-1.58-1.49-1.84-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.61-1.47-.83-2.02-.22-.53-.44-.46-.61-.47h-.52c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.33.97 2.62 1.1 2.8.13.18 1.9 2.91 4.6 4.08.64.27 1.14.43 1.53.55.64.2 1.22.17 1.68.1.51-.08 1.6-.65 1.83-1.28.22-.63.22-1.17.16-1.28-.07-.11-.25-.18-.52-.31ZM12.04 2C6.52 2 2.04 6.47 2.04 12c0 1.77.46 3.43 1.26 4.88L2 22l5.28-1.38A9.95 9.95 0 0 0 12.04 22C17.56 22 22.04 17.53 22.04 12S17.56 2 12.04 2Zm0 18.19c-1.56 0-3.02-.42-4.28-1.15l-.31-.18-3.13.82.84-3.05-.2-.32A8.12 8.12 0 0 1 3.86 12c0-4.51 3.67-8.18 8.18-8.18s8.18 3.67 8.18 8.18-3.67 8.19-8.18 8.19Z"/></svg><span>Cotizar por WhatsApp</span></a>
+    </article>
+    <article class="service-card">
+      <span class="service-kicker"><i></i> Publicidad</span>
+      <h3>Publicidad en Méndez TV</h3>
+      <p>Promociona tu negocio, producto o servicio en nuestras redes sociales con difusión estratégica para llegar a más personas.</p>
+      <a class="service-cta" data-service-title="Publicidad en Méndez TV" href="#" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.27-.13-1.6-.79-1.84-.88-.25-.09-.43-.13-.61.14-.18.26-.7.88-.86 1.06-.16.18-.31.2-.58.07-.27-.13-1.13-.42-2.16-1.35-.8-.71-1.33-1.58-1.49-1.84-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.61-1.47-.83-2.02-.22-.53-.44-.46-.61-.47h-.52c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.33.97 2.62 1.1 2.8.13.18 1.9 2.91 4.6 4.08.64.27 1.14.43 1.53.55.64.2 1.22.17 1.68.1.51-.08 1.6-.65 1.83-1.28.22-.63.22-1.17.16-1.28-.07-.11-.25-.18-.52-.31ZM12.04 2C6.52 2 2.04 6.47 2.04 12c0 1.77.46 3.43 1.26 4.88L2 22l5.28-1.38A9.95 9.95 0 0 0 12.04 22C17.56 22 22.04 17.53 22.04 12S17.56 2 12.04 2Zm0 18.19c-1.56 0-3.02-.42-4.28-1.15l-.31-.18-3.13.82.84-3.05-.2-.32A8.12 8.12 0 0 1 3.86 12c0-4.51 3.67-8.18 8.18-8.18s8.18 3.67 8.18 8.18-3.67 8.19-8.18 8.19Z"/></svg><span>Cotizar por WhatsApp</span></a>
+    </article>
+    <article class="service-card">
+      <span class="service-kicker"><i></i> Video</span>
+      <h3>Video publicitario</h3>
+      <p>Contenido dinámico y profesional para presentar tu marca, producto o servicio con mayor impacto visual en redes sociales.</p>
+      <a class="service-cta" data-service-title="Video publicitario" href="#" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.27-.13-1.6-.79-1.84-.88-.25-.09-.43-.13-.61.14-.18.26-.7.88-.86 1.06-.16.18-.31.2-.58.07-.27-.13-1.13-.42-2.16-1.35-.8-.71-1.33-1.58-1.49-1.84-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.61-1.47-.83-2.02-.22-.53-.44-.46-.61-.47h-.52c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.33.97 2.62 1.1 2.8.13.18 1.9 2.91 4.6 4.08.64.27 1.14.43 1.53.55.64.2 1.22.17 1.68.1.51-.08 1.6-.65 1.83-1.28.22-.63.22-1.17.16-1.28-.07-.11-.25-.18-.52-.31ZM12.04 2C6.52 2 2.04 6.47 2.04 12c0 1.77.46 3.43 1.26 4.88L2 22l5.28-1.38A9.95 9.95 0 0 0 12.04 22C17.56 22 22.04 17.53 22.04 12S17.56 2 12.04 2Zm0 18.19c-1.56 0-3.02-.42-4.28-1.15l-.31-.18-3.13.82.84-3.05-.2-.32A8.12 8.12 0 0 1 3.86 12c0-4.51 3.67-8.18 8.18-8.18s8.18 3.67 8.18 8.18-3.67 8.19-8.18 8.19Z"/></svg><span>Cotizar por WhatsApp</span></a>
+    </article>
+    <article class="service-card">
+      <span class="service-kicker"><i></i> Diseño</span>
+      <h3>Diseño de arte publicitario</h3>
+      <p>Creamos imágenes profesionales listas para Facebook, Instagram o WhatsApp con tu información, fotos y estilo de marca.</p>
+      <a class="service-cta" data-service-title="Diseño de arte publicitario" href="#" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.27-.13-1.6-.79-1.84-.88-.25-.09-.43-.13-.61.14-.18.26-.7.88-.86 1.06-.16.18-.31.2-.58.07-.27-.13-1.13-.42-2.16-1.35-.8-.71-1.33-1.58-1.49-1.84-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.61-1.47-.83-2.02-.22-.53-.44-.46-.61-.47h-.52c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.33.97 2.62 1.1 2.8.13.18 1.9 2.91 4.6 4.08.64.27 1.14.43 1.53.55.64.2 1.22.17 1.68.1.51-.08 1.6-.65 1.83-1.28.22-.63.22-1.17.16-1.28-.07-.11-.25-.18-.52-.31ZM12.04 2C6.52 2 2.04 6.47 2.04 12c0 1.77.46 3.43 1.26 4.88L2 22l5.28-1.38A9.95 9.95 0 0 0 12.04 22C17.56 22 22.04 17.53 22.04 12S17.56 2 12.04 2Zm0 18.19c-1.56 0-3.02-.42-4.28-1.15l-.31-.18-3.13.82.84-3.05-.2-.32A8.12 8.12 0 0 1 3.86 12c0-4.51 3.67-8.18 8.18-8.18s8.18 3.67 8.18 8.18-3.67 8.19-8.18 8.19Z"/></svg><span>Cotizar por WhatsApp</span></a>
+    </article>
+    <article class="service-card">
+      <span class="service-kicker"><i></i> En vivo</span>
+      <h3>Transmisión en vivo</h3>
+      <p>Llevamos tu evento en vivo a la audiencia de Méndez TV, ideal para festividades, deportes, conciertos y actividades especiales.</p>
+      <a class="service-cta" data-service-title="Transmisión en vivo" href="#" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.27-.13-1.6-.79-1.84-.88-.25-.09-.43-.13-.61.14-.18.26-.7.88-.86 1.06-.16.18-.31.2-.58.07-.27-.13-1.13-.42-2.16-1.35-.8-.71-1.33-1.58-1.49-1.84-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.61-1.47-.83-2.02-.22-.53-.44-.46-.61-.47h-.52c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.33.97 2.62 1.1 2.8.13.18 1.9 2.91 4.6 4.08.64.27 1.14.43 1.53.55.64.2 1.22.17 1.68.1.51-.08 1.6-.65 1.83-1.28.22-.63.22-1.17.16-1.28-.07-.11-.25-.18-.52-.31ZM12.04 2C6.52 2 2.04 6.47 2.04 12c0 1.77.46 3.43 1.26 4.88L2 22l5.28-1.38A9.95 9.95 0 0 0 12.04 22C17.56 22 22.04 17.53 22.04 12S17.56 2 12.04 2Zm0 18.19c-1.56 0-3.02-.42-4.28-1.15l-.31-.18-3.13.82.84-3.05-.2-.32A8.12 8.12 0 0 1 3.86 12c0-4.51 3.67-8.18 8.18-8.18s8.18 3.67 8.18 8.18-3.67 8.19-8.18 8.19Z"/></svg><span>Cotizar por WhatsApp</span></a>
+    </article>
+    <article class="service-card">
+      <span class="service-kicker"><i></i> Cobertura</span>
+      <h3>Cobertura de eventos</h3>
+      <p>Registramos y difundimos los mejores momentos de tu actividad con grabación, fotografías, entrevistas y video resumen.</p>
+      <a class="service-cta" data-service-title="Cobertura de eventos" href="#" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.27-.13-1.6-.79-1.84-.88-.25-.09-.43-.13-.61.14-.18.26-.7.88-.86 1.06-.16.18-.31.2-.58.07-.27-.13-1.13-.42-2.16-1.35-.8-.71-1.33-1.58-1.49-1.84-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.61-1.47-.83-2.02-.22-.53-.44-.46-.61-.47h-.52c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.33.97 2.62 1.1 2.8.13.18 1.9 2.91 4.6 4.08.64.27 1.14.43 1.53.55.64.2 1.22.17 1.68.1.51-.08 1.6-.65 1.83-1.28.22-.63.22-1.17.16-1.28-.07-.11-.25-.18-.52-.31ZM12.04 2C6.52 2 2.04 6.47 2.04 12c0 1.77.46 3.43 1.26 4.88L2 22l5.28-1.38A9.95 9.95 0 0 0 12.04 22C17.56 22 22.04 17.53 22.04 12S17.56 2 12.04 2Zm0 18.19c-1.56 0-3.02-.42-4.28-1.15l-.31-.18-3.13.82.84-3.05-.2-.32A8.12 8.12 0 0 1 3.86 12c0-4.51 3.67-8.18 8.18-8.18s8.18 3.67 8.18 8.18-3.67 8.19-8.18 8.19Z"/></svg><span>Cotizar por WhatsApp</span></a>
+    </article>
+    <article class="service-card">
+      <span class="service-kicker"><i></i> Entrevistas</span>
+      <h3>Entrevista promocional</h3>
+      <p>Presenta tu proyecto, institución, emprendimiento o actividad en un formato grabado o en vivo con difusión en redes.</p>
+      <a class="service-cta" data-service-title="Entrevista promocional" href="#" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.27-.13-1.6-.79-1.84-.88-.25-.09-.43-.13-.61.14-.18.26-.7.88-.86 1.06-.16.18-.31.2-.58.07-.27-.13-1.13-.42-2.16-1.35-.8-.71-1.33-1.58-1.49-1.84-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.61-1.47-.83-2.02-.22-.53-.44-.46-.61-.47h-.52c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.33.97 2.62 1.1 2.8.13.18 1.9 2.91 4.6 4.08.64.27 1.14.43 1.53.55.64.2 1.22.17 1.68.1.51-.08 1.6-.65 1.83-1.28.22-.63.22-1.17.16-1.28-.07-.11-.25-.18-.52-.31ZM12.04 2C6.52 2 2.04 6.47 2.04 12c0 1.77.46 3.43 1.26 4.88L2 22l5.28-1.38A9.95 9.95 0 0 0 12.04 22C17.56 22 22.04 17.53 22.04 12S17.56 2 12.04 2Zm0 18.19c-1.56 0-3.02-.42-4.28-1.15l-.31-.18-3.13.82.84-3.05-.2-.32A8.12 8.12 0 0 1 3.86 12c0-4.51 3.67-8.18 8.18-8.18s8.18 3.67 8.18 8.18-3.67 8.19-8.18 8.19Z"/></svg><span>Cotizar por WhatsApp</span></a>
+    </article>
+    <article class="service-card">
+      <span class="service-kicker"><i></i> Paquetes</span>
+      <h3>Paquete para negocios</h3>
+      <p>Una solución completa para tu emprendimiento con arte publicitario, video promocional, publicación y copy en un solo paquete.</p>
+      <a class="service-cta" data-service-title="Paquete para negocios" href="#" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.27-.13-1.6-.79-1.84-.88-.25-.09-.43-.13-.61.14-.18.26-.7.88-.86 1.06-.16.18-.31.2-.58.07-.27-.13-1.13-.42-2.16-1.35-.8-.71-1.33-1.58-1.49-1.84-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.61-1.47-.83-2.02-.22-.53-.44-.46-.61-.47h-.52c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.33.97 2.62 1.1 2.8.13.18 1.9 2.91 4.6 4.08.64.27 1.14.43 1.53.55.64.2 1.22.17 1.68.1.51-.08 1.6-.65 1.83-1.28.22-.63.22-1.17.16-1.28-.07-.11-.25-.18-.52-.31ZM12.04 2C6.52 2 2.04 6.47 2.04 12c0 1.77.46 3.43 1.26 4.88L2 22l5.28-1.38A9.95 9.95 0 0 0 12.04 22C17.56 22 22.04 17.53 22.04 12S17.56 2 12.04 2Zm0 18.19c-1.56 0-3.02-.42-4.28-1.15l-.31-.18-3.13.82.84-3.05-.2-.32A8.12 8.12 0 0 1 3.86 12c0-4.51 3.67-8.18 8.18-8.18s8.18 3.67 8.18 8.18-3.67 8.19-8.18 8.19Z"/></svg><span>Cotizar por WhatsApp</span></a>
+    </article>
+    <article class="service-card">
+      <span class="service-kicker"><i></i> Deportes</span>
+      <h3>Auspicio deportivo</h3>
+      <p>Haz visible tu marca durante nuestras transmisiones deportivas con banners, menciones comerciales y presencia de marca.</p>
+      <a class="service-cta" data-service-title="Auspicio deportivo" href="#" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.27-.13-1.6-.79-1.84-.88-.25-.09-.43-.13-.61.14-.18.26-.7.88-.86 1.06-.16.18-.31.2-.58.07-.27-.13-1.13-.42-2.16-1.35-.8-.71-1.33-1.58-1.49-1.84-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.61-1.47-.83-2.02-.22-.53-.44-.46-.61-.47h-.52c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.33.97 2.62 1.1 2.8.13.18 1.9 2.91 4.6 4.08.64.27 1.14.43 1.53.55.64.2 1.22.17 1.68.1.51-.08 1.6-.65 1.83-1.28.22-.63.22-1.17.16-1.28-.07-.11-.25-.18-.52-.31ZM12.04 2C6.52 2 2.04 6.47 2.04 12c0 1.77.46 3.43 1.26 4.88L2 22l5.28-1.38A9.95 9.95 0 0 0 12.04 22C17.56 22 22.04 17.53 22.04 12S17.56 2 12.04 2Zm0 18.19c-1.56 0-3.02-.42-4.28-1.15l-.31-.18-3.13.82.84-3.05-.2-.32A8.12 8.12 0 0 1 3.86 12c0-4.51 3.67-8.18 8.18-8.18s8.18 3.67 8.18 8.18-3.67 8.19-8.18 8.19Z"/></svg><span>Cotizar por WhatsApp</span></a>
+    </article>
+    <article class="service-card">
+      <span class="service-kicker"><i></i> Eventos</span>
+      <h3>Auspicio de eventos</h3>
+      <p>Conecta tu marca con festividades, conciertos, desfiles y eventos especiales mediante banners, menciones y presencia en vivo.</p>
+      <a class="service-cta" data-service-title="Auspicio de eventos" href="#" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.27-.13-1.6-.79-1.84-.88-.25-.09-.43-.13-.61.14-.18.26-.7.88-.86 1.06-.16.18-.31.2-.58.07-.27-.13-1.13-.42-2.16-1.35-.8-.71-1.33-1.58-1.49-1.84-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.61-1.47-.83-2.02-.22-.53-.44-.46-.61-.47h-.52c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.33.97 2.62 1.1 2.8.13.18 1.9 2.91 4.6 4.08.64.27 1.14.43 1.53.55.64.2 1.22.17 1.68.1.51-.08 1.6-.65 1.83-1.28.22-.63.22-1.17.16-1.28-.07-.11-.25-.18-.52-.31ZM12.04 2C6.52 2 2.04 6.47 2.04 12c0 1.77.46 3.43 1.26 4.88L2 22l5.28-1.38A9.95 9.95 0 0 0 12.04 22C17.56 22 22.04 17.53 22.04 12S17.56 2 12.04 2Zm0 18.19c-1.56 0-3.02-.42-4.28-1.15l-.31-.18-3.13.82.84-3.05-.2-.32A8.12 8.12 0 0 1 3.86 12c0-4.51 3.67-8.18 8.18-8.18s8.18 3.67 8.18 8.18-3.67 8.19-8.18 8.19Z"/></svg><span>Cotizar por WhatsApp</span></a>
+    </article>
+    <article class="service-card">
+      <span class="service-kicker"><i></i> Redes</span>
+      <h3>Contenido para redes</h3>
+      <p>Creamos diseños, reels, videos y textos publicitarios para fortalecer la presencia digital de tu negocio en redes sociales.</p>
+      <a class="service-cta" data-service-title="Contenido para redes" href="#" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.27-.13-1.6-.79-1.84-.88-.25-.09-.43-.13-.61.14-.18.26-.7.88-.86 1.06-.16.18-.31.2-.58.07-.27-.13-1.13-.42-2.16-1.35-.8-.71-1.33-1.58-1.49-1.84-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.61-1.47-.83-2.02-.22-.53-.44-.46-.61-.47h-.52c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.33.97 2.62 1.1 2.8.13.18 1.9 2.91 4.6 4.08.64.27 1.14.43 1.53.55.64.2 1.22.17 1.68.1.51-.08 1.6-.65 1.83-1.28.22-.63.22-1.17.16-1.28-.07-.11-.25-.18-.52-.31ZM12.04 2C6.52 2 2.04 6.47 2.04 12c0 1.77.46 3.43 1.26 4.88L2 22l5.28-1.38A9.95 9.95 0 0 0 12.04 22C17.56 22 22.04 17.53 22.04 12S17.56 2 12.04 2Zm0 18.19c-1.56 0-3.02-.42-4.28-1.15l-.31-.18-3.13.82.84-3.05-.2-.32A8.12 8.12 0 0 1 3.86 12c0-4.51 3.67-8.18 8.18-8.18s8.18 3.67 8.18 8.18-3.67 8.19-8.18 8.19Z"/></svg><span>Cotizar por WhatsApp</span></a>
+    </article>
+    <article class="service-card">
+      <span class="service-kicker"><i></i> Audio</span>
+      <h3>Cuña publicitaria</h3>
+      <p>Haz que tu negocio suene con una cuña promocional clara, profesional y efectiva, ideal para promociones y campañas.</p>
+      <a class="service-cta" data-service-title="Cuña publicitaria" href="#" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.27-.13-1.6-.79-1.84-.88-.25-.09-.43-.13-.61.14-.18.26-.7.88-.86 1.06-.16.18-.31.2-.58.07-.27-.13-1.13-.42-2.16-1.35-.8-.71-1.33-1.58-1.49-1.84-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.61-1.47-.83-2.02-.22-.53-.44-.46-.61-.47h-.52c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.33.97 2.62 1.1 2.8.13.18 1.9 2.91 4.6 4.08.64.27 1.14.43 1.53.55.64.2 1.22.17 1.68.1.51-.08 1.6-.65 1.83-1.28.22-.63.22-1.17.16-1.28-.07-.11-.25-.18-.52-.31ZM12.04 2C6.52 2 2.04 6.47 2.04 12c0 1.77.46 3.43 1.26 4.88L2 22l5.28-1.38A9.95 9.95 0 0 0 12.04 22C17.56 22 22.04 17.53 22.04 12S17.56 2 12.04 2Zm0 18.19c-1.56 0-3.02-.42-4.28-1.15l-.31-.18-3.13.82.84-3.05-.2-.32A8.12 8.12 0 0 1 3.86 12c0-4.51 3.67-8.18 8.18-8.18s8.18 3.67 8.18 8.18-3.67 8.19-8.18 8.19Z"/></svg><span>Cotizar por WhatsApp</span></a>
+    </article>
+  </div>
+</section>
+
+<section class="container" id="publicidad" data-site-view="mendez-tv"><div class="ad-banner"><div><strong>Tu marca también puede sonar aquí.</strong><p>Promociona tu negocio, evento o emprendimiento en Radio Méndez.<br>Consulta por espacios publicitarios y auspicios.</p></div><a class="primary" id="contact-ad" href="#" target="_blank" rel="noopener noreferrer">Consultar publicidad ↗</a></div></section>
+
+<section class="container contact-section" id="contacto" data-site-view="mendez-tv" aria-labelledby="contact-title">
+  <div class="contact-panel"><div class="contact-intro"><span class="overline">HABLEMOS</span><h2 id="contact-title">Contacto <span>Méndez TV</span></h2><p>¿Quieres anunciar tu negocio, auspiciar un programa o solicitar un servicio de Méndez TV? Escríbenos directamente.</p><div class="contact-phone">WhatsApp: <strong>096 118 0749</strong></div></div>
+    <div class="contact-actions"><a class="contact-wa" id="contact-whatsapp" href="https://wa.me/593961180749?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20Radio%20M%C3%A9ndez." target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.65 15.02L2 22l5.1-1.34A10 10 0 1 0 12 2Zm0 18.16a8.1 8.1 0 0 1-4.13-1.13l-.3-.17-3.02.8.81-2.95-.19-.3A8.15 8.15 0 1 1 12 20.16Zm4.5-6.1c-.24-.12-1.42-.7-1.64-.77-.22-.08-.38-.12-.54.12-.16.23-.62.77-.76.93-.14.15-.28.17-.51.06-.24-.12-1-.37-1.92-1.2a7.2 7.2 0 0 1-1.33-1.63c-.14-.24-.01-.36.11-.47.11-.11.24-.28.36-.42.12-.14.16-.24.24-.39.08-.16.04-.3-.02-.42-.06-.11-.54-1.3-.74-1.8-.2-.47-.39-.4-.54-.41h-.46c-.16 0-.42.06-.64.3s-.84.83-.84 2.02.86 2.33.98 2.49c.12.16 1.7 2.59 4.12 3.63.58.25 1.03.39 1.38.5.58.18 1.09.16 1.5.09.46-.07 1.42-.58 1.63-1.14s.21-1.04.15-1.14c-.06-.1-.22-.16-.46-.28Z"/></svg> Escribir por WhatsApp <span aria-hidden="true">↗</span></a>
+    <a class="contact-outline" href="https://www.facebook.com/mendeztvec" target="_blank" rel="noopener noreferrer">Facebook de Méndez TV <span aria-hidden="true">↗</span></a><a class="contact-outline" href="https://www.instagram.com/mendeztvec/" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">↗</span></a></div>
+  </div>
+</section>
 
 <section class="container ranking-intro" id="ranking" data-site-view="ranking" aria-labelledby="ranking-page-title">
   <span class="overline">RADIO MÉNDEZ · LISTAS MUSICALES</span>
@@ -1068,90 +1171,7 @@
   </div>
 </section>
 </div>
-<section class="container services-section" id="servicios" data-site-view="servicios" aria-labelledby="servicios-titulo">
-  <div class="services-head">
-    <div>
-      <span class="overline">CATÁLOGO INTERACTIVO</span>
-      <h2 id="servicios-titulo">Nuestros <span>servicios</span></h2>
-      <p>Explora nuestros servicios de producción, publicidad y difusión. Cada opción incluye un botón directo para cotizar por WhatsApp y conversar de inmediato con Méndez TV.</p>
-    </div>
-    <div class="services-tip">💬 Todos los botones van directo a WhatsApp</div>
-  </div>
-  <div class="services-grid">
-    <article class="service-card">
-      <span class="service-kicker"><i></i> Comunidad</span>
-      <h3>Posteo solidario</h3>
-      <p>Difundimos denuncias, comunicados y avisos de interés general para apoyar a la comunidad y dar visibilidad a información importante.</p>
-      <a class="service-cta" data-service-title="Posteo solidario" href="#" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.27-.13-1.6-.79-1.84-.88-.25-.09-.43-.13-.61.14-.18.26-.7.88-.86 1.06-.16.18-.31.2-.58.07-.27-.13-1.13-.42-2.16-1.35-.8-.71-1.33-1.58-1.49-1.84-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.61-1.47-.83-2.02-.22-.53-.44-.46-.61-.47h-.52c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.33.97 2.62 1.1 2.8.13.18 1.9 2.91 4.6 4.08.64.27 1.14.43 1.53.55.64.2 1.22.17 1.68.1.51-.08 1.6-.65 1.83-1.28.22-.63.22-1.17.16-1.28-.07-.11-.25-.18-.52-.31ZM12.04 2C6.52 2 2.04 6.47 2.04 12c0 1.77.46 3.43 1.26 4.88L2 22l5.28-1.38A9.95 9.95 0 0 0 12.04 22C17.56 22 22.04 17.53 22.04 12S17.56 2 12.04 2Zm0 18.19c-1.56 0-3.02-.42-4.28-1.15l-.31-.18-3.13.82.84-3.05-.2-.32A8.12 8.12 0 0 1 3.86 12c0-4.51 3.67-8.18 8.18-8.18s8.18 3.67 8.18 8.18-3.67 8.19-8.18 8.19Z"/></svg><span>Cotizar por WhatsApp</span></a>
-    </article>
-    <article class="service-card">
-      <span class="service-kicker"><i></i> Publicidad</span>
-      <h3>Publicidad en Méndez TV</h3>
-      <p>Promociona tu negocio, producto o servicio en nuestras redes sociales con difusión estratégica para llegar a más personas.</p>
-      <a class="service-cta" data-service-title="Publicidad en Méndez TV" href="#" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.27-.13-1.6-.79-1.84-.88-.25-.09-.43-.13-.61.14-.18.26-.7.88-.86 1.06-.16.18-.31.2-.58.07-.27-.13-1.13-.42-2.16-1.35-.8-.71-1.33-1.58-1.49-1.84-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.61-1.47-.83-2.02-.22-.53-.44-.46-.61-.47h-.52c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.33.97 2.62 1.1 2.8.13.18 1.9 2.91 4.6 4.08.64.27 1.14.43 1.53.55.64.2 1.22.17 1.68.1.51-.08 1.6-.65 1.83-1.28.22-.63.22-1.17.16-1.28-.07-.11-.25-.18-.52-.31ZM12.04 2C6.52 2 2.04 6.47 2.04 12c0 1.77.46 3.43 1.26 4.88L2 22l5.28-1.38A9.95 9.95 0 0 0 12.04 22C17.56 22 22.04 17.53 22.04 12S17.56 2 12.04 2Zm0 18.19c-1.56 0-3.02-.42-4.28-1.15l-.31-.18-3.13.82.84-3.05-.2-.32A8.12 8.12 0 0 1 3.86 12c0-4.51 3.67-8.18 8.18-8.18s8.18 3.67 8.18 8.18-3.67 8.19-8.18 8.19Z"/></svg><span>Cotizar por WhatsApp</span></a>
-    </article>
-    <article class="service-card">
-      <span class="service-kicker"><i></i> Video</span>
-      <h3>Video publicitario</h3>
-      <p>Contenido dinámico y profesional para presentar tu marca, producto o servicio con mayor impacto visual en redes sociales.</p>
-      <a class="service-cta" data-service-title="Video publicitario" href="#" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.27-.13-1.6-.79-1.84-.88-.25-.09-.43-.13-.61.14-.18.26-.7.88-.86 1.06-.16.18-.31.2-.58.07-.27-.13-1.13-.42-2.16-1.35-.8-.71-1.33-1.58-1.49-1.84-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.61-1.47-.83-2.02-.22-.53-.44-.46-.61-.47h-.52c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.33.97 2.62 1.1 2.8.13.18 1.9 2.91 4.6 4.08.64.27 1.14.43 1.53.55.64.2 1.22.17 1.68.1.51-.08 1.6-.65 1.83-1.28.22-.63.22-1.17.16-1.28-.07-.11-.25-.18-.52-.31ZM12.04 2C6.52 2 2.04 6.47 2.04 12c0 1.77.46 3.43 1.26 4.88L2 22l5.28-1.38A9.95 9.95 0 0 0 12.04 22C17.56 22 22.04 17.53 22.04 12S17.56 2 12.04 2Zm0 18.19c-1.56 0-3.02-.42-4.28-1.15l-.31-.18-3.13.82.84-3.05-.2-.32A8.12 8.12 0 0 1 3.86 12c0-4.51 3.67-8.18 8.18-8.18s8.18 3.67 8.18 8.18-3.67 8.19-8.18 8.19Z"/></svg><span>Cotizar por WhatsApp</span></a>
-    </article>
-    <article class="service-card">
-      <span class="service-kicker"><i></i> Diseño</span>
-      <h3>Diseño de arte publicitario</h3>
-      <p>Creamos imágenes profesionales listas para Facebook, Instagram o WhatsApp con tu información, fotos y estilo de marca.</p>
-      <a class="service-cta" data-service-title="Diseño de arte publicitario" href="#" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.27-.13-1.6-.79-1.84-.88-.25-.09-.43-.13-.61.14-.18.26-.7.88-.86 1.06-.16.18-.31.2-.58.07-.27-.13-1.13-.42-2.16-1.35-.8-.71-1.33-1.58-1.49-1.84-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.61-1.47-.83-2.02-.22-.53-.44-.46-.61-.47h-.52c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.33.97 2.62 1.1 2.8.13.18 1.9 2.91 4.6 4.08.64.27 1.14.43 1.53.55.64.2 1.22.17 1.68.1.51-.08 1.6-.65 1.83-1.28.22-.63.22-1.17.16-1.28-.07-.11-.25-.18-.52-.31ZM12.04 2C6.52 2 2.04 6.47 2.04 12c0 1.77.46 3.43 1.26 4.88L2 22l5.28-1.38A9.95 9.95 0 0 0 12.04 22C17.56 22 22.04 17.53 22.04 12S17.56 2 12.04 2Zm0 18.19c-1.56 0-3.02-.42-4.28-1.15l-.31-.18-3.13.82.84-3.05-.2-.32A8.12 8.12 0 0 1 3.86 12c0-4.51 3.67-8.18 8.18-8.18s8.18 3.67 8.18 8.18-3.67 8.19-8.18 8.19Z"/></svg><span>Cotizar por WhatsApp</span></a>
-    </article>
-    <article class="service-card">
-      <span class="service-kicker"><i></i> En vivo</span>
-      <h3>Transmisión en vivo</h3>
-      <p>Llevamos tu evento en vivo a la audiencia de Méndez TV, ideal para festividades, deportes, conciertos y actividades especiales.</p>
-      <a class="service-cta" data-service-title="Transmisión en vivo" href="#" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.27-.13-1.6-.79-1.84-.88-.25-.09-.43-.13-.61.14-.18.26-.7.88-.86 1.06-.16.18-.31.2-.58.07-.27-.13-1.13-.42-2.16-1.35-.8-.71-1.33-1.58-1.49-1.84-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.61-1.47-.83-2.02-.22-.53-.44-.46-.61-.47h-.52c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.33.97 2.62 1.1 2.8.13.18 1.9 2.91 4.6 4.08.64.27 1.14.43 1.53.55.64.2 1.22.17 1.68.1.51-.08 1.6-.65 1.83-1.28.22-.63.22-1.17.16-1.28-.07-.11-.25-.18-.52-.31ZM12.04 2C6.52 2 2.04 6.47 2.04 12c0 1.77.46 3.43 1.26 4.88L2 22l5.28-1.38A9.95 9.95 0 0 0 12.04 22C17.56 22 22.04 17.53 22.04 12S17.56 2 12.04 2Zm0 18.19c-1.56 0-3.02-.42-4.28-1.15l-.31-.18-3.13.82.84-3.05-.2-.32A8.12 8.12 0 0 1 3.86 12c0-4.51 3.67-8.18 8.18-8.18s8.18 3.67 8.18 8.18-3.67 8.19-8.18 8.19Z"/></svg><span>Cotizar por WhatsApp</span></a>
-    </article>
-    <article class="service-card">
-      <span class="service-kicker"><i></i> Cobertura</span>
-      <h3>Cobertura de eventos</h3>
-      <p>Registramos y difundimos los mejores momentos de tu actividad con grabación, fotografías, entrevistas y video resumen.</p>
-      <a class="service-cta" data-service-title="Cobertura de eventos" href="#" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.27-.13-1.6-.79-1.84-.88-.25-.09-.43-.13-.61.14-.18.26-.7.88-.86 1.06-.16.18-.31.2-.58.07-.27-.13-1.13-.42-2.16-1.35-.8-.71-1.33-1.58-1.49-1.84-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.61-1.47-.83-2.02-.22-.53-.44-.46-.61-.47h-.52c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.33.97 2.62 1.1 2.8.13.18 1.9 2.91 4.6 4.08.64.27 1.14.43 1.53.55.64.2 1.22.17 1.68.1.51-.08 1.6-.65 1.83-1.28.22-.63.22-1.17.16-1.28-.07-.11-.25-.18-.52-.31ZM12.04 2C6.52 2 2.04 6.47 2.04 12c0 1.77.46 3.43 1.26 4.88L2 22l5.28-1.38A9.95 9.95 0 0 0 12.04 22C17.56 22 22.04 17.53 22.04 12S17.56 2 12.04 2Zm0 18.19c-1.56 0-3.02-.42-4.28-1.15l-.31-.18-3.13.82.84-3.05-.2-.32A8.12 8.12 0 0 1 3.86 12c0-4.51 3.67-8.18 8.18-8.18s8.18 3.67 8.18 8.18-3.67 8.19-8.18 8.19Z"/></svg><span>Cotizar por WhatsApp</span></a>
-    </article>
-    <article class="service-card">
-      <span class="service-kicker"><i></i> Entrevistas</span>
-      <h3>Entrevista promocional</h3>
-      <p>Presenta tu proyecto, institución, emprendimiento o actividad en un formato grabado o en vivo con difusión en redes.</p>
-      <a class="service-cta" data-service-title="Entrevista promocional" href="#" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.27-.13-1.6-.79-1.84-.88-.25-.09-.43-.13-.61.14-.18.26-.7.88-.86 1.06-.16.18-.31.2-.58.07-.27-.13-1.13-.42-2.16-1.35-.8-.71-1.33-1.58-1.49-1.84-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.61-1.47-.83-2.02-.22-.53-.44-.46-.61-.47h-.52c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.33.97 2.62 1.1 2.8.13.18 1.9 2.91 4.6 4.08.64.27 1.14.43 1.53.55.64.2 1.22.17 1.68.1.51-.08 1.6-.65 1.83-1.28.22-.63.22-1.17.16-1.28-.07-.11-.25-.18-.52-.31ZM12.04 2C6.52 2 2.04 6.47 2.04 12c0 1.77.46 3.43 1.26 4.88L2 22l5.28-1.38A9.95 9.95 0 0 0 12.04 22C17.56 22 22.04 17.53 22.04 12S17.56 2 12.04 2Zm0 18.19c-1.56 0-3.02-.42-4.28-1.15l-.31-.18-3.13.82.84-3.05-.2-.32A8.12 8.12 0 0 1 3.86 12c0-4.51 3.67-8.18 8.18-8.18s8.18 3.67 8.18 8.18-3.67 8.19-8.18 8.19Z"/></svg><span>Cotizar por WhatsApp</span></a>
-    </article>
-    <article class="service-card">
-      <span class="service-kicker"><i></i> Paquetes</span>
-      <h3>Paquete para negocios</h3>
-      <p>Una solución completa para tu emprendimiento con arte publicitario, video promocional, publicación y copy en un solo paquete.</p>
-      <a class="service-cta" data-service-title="Paquete para negocios" href="#" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.27-.13-1.6-.79-1.84-.88-.25-.09-.43-.13-.61.14-.18.26-.7.88-.86 1.06-.16.18-.31.2-.58.07-.27-.13-1.13-.42-2.16-1.35-.8-.71-1.33-1.58-1.49-1.84-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.61-1.47-.83-2.02-.22-.53-.44-.46-.61-.47h-.52c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.33.97 2.62 1.1 2.8.13.18 1.9 2.91 4.6 4.08.64.27 1.14.43 1.53.55.64.2 1.22.17 1.68.1.51-.08 1.6-.65 1.83-1.28.22-.63.22-1.17.16-1.28-.07-.11-.25-.18-.52-.31ZM12.04 2C6.52 2 2.04 6.47 2.04 12c0 1.77.46 3.43 1.26 4.88L2 22l5.28-1.38A9.95 9.95 0 0 0 12.04 22C17.56 22 22.04 17.53 22.04 12S17.56 2 12.04 2Zm0 18.19c-1.56 0-3.02-.42-4.28-1.15l-.31-.18-3.13.82.84-3.05-.2-.32A8.12 8.12 0 0 1 3.86 12c0-4.51 3.67-8.18 8.18-8.18s8.18 3.67 8.18 8.18-3.67 8.19-8.18 8.19Z"/></svg><span>Cotizar por WhatsApp</span></a>
-    </article>
-    <article class="service-card">
-      <span class="service-kicker"><i></i> Deportes</span>
-      <h3>Auspicio deportivo</h3>
-      <p>Haz visible tu marca durante nuestras transmisiones deportivas con banners, menciones comerciales y presencia de marca.</p>
-      <a class="service-cta" data-service-title="Auspicio deportivo" href="#" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.27-.13-1.6-.79-1.84-.88-.25-.09-.43-.13-.61.14-.18.26-.7.88-.86 1.06-.16.18-.31.2-.58.07-.27-.13-1.13-.42-2.16-1.35-.8-.71-1.33-1.58-1.49-1.84-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.61-1.47-.83-2.02-.22-.53-.44-.46-.61-.47h-.52c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.33.97 2.62 1.1 2.8.13.18 1.9 2.91 4.6 4.08.64.27 1.14.43 1.53.55.64.2 1.22.17 1.68.1.51-.08 1.6-.65 1.83-1.28.22-.63.22-1.17.16-1.28-.07-.11-.25-.18-.52-.31ZM12.04 2C6.52 2 2.04 6.47 2.04 12c0 1.77.46 3.43 1.26 4.88L2 22l5.28-1.38A9.95 9.95 0 0 0 12.04 22C17.56 22 22.04 17.53 22.04 12S17.56 2 12.04 2Zm0 18.19c-1.56 0-3.02-.42-4.28-1.15l-.31-.18-3.13.82.84-3.05-.2-.32A8.12 8.12 0 0 1 3.86 12c0-4.51 3.67-8.18 8.18-8.18s8.18 3.67 8.18 8.18-3.67 8.19-8.18 8.19Z"/></svg><span>Cotizar por WhatsApp</span></a>
-    </article>
-    <article class="service-card">
-      <span class="service-kicker"><i></i> Eventos</span>
-      <h3>Auspicio de eventos</h3>
-      <p>Conecta tu marca con festividades, conciertos, desfiles y eventos especiales mediante banners, menciones y presencia en vivo.</p>
-      <a class="service-cta" data-service-title="Auspicio de eventos" href="#" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.27-.13-1.6-.79-1.84-.88-.25-.09-.43-.13-.61.14-.18.26-.7.88-.86 1.06-.16.18-.31.2-.58.07-.27-.13-1.13-.42-2.16-1.35-.8-.71-1.33-1.58-1.49-1.84-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.61-1.47-.83-2.02-.22-.53-.44-.46-.61-.47h-.52c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.33.97 2.62 1.1 2.8.13.18 1.9 2.91 4.6 4.08.64.27 1.14.43 1.53.55.64.2 1.22.17 1.68.1.51-.08 1.6-.65 1.83-1.28.22-.63.22-1.17.16-1.28-.07-.11-.25-.18-.52-.31ZM12.04 2C6.52 2 2.04 6.47 2.04 12c0 1.77.46 3.43 1.26 4.88L2 22l5.28-1.38A9.95 9.95 0 0 0 12.04 22C17.56 22 22.04 17.53 22.04 12S17.56 2 12.04 2Zm0 18.19c-1.56 0-3.02-.42-4.28-1.15l-.31-.18-3.13.82.84-3.05-.2-.32A8.12 8.12 0 0 1 3.86 12c0-4.51 3.67-8.18 8.18-8.18s8.18 3.67 8.18 8.18-3.67 8.19-8.18 8.19Z"/></svg><span>Cotizar por WhatsApp</span></a>
-    </article>
-    <article class="service-card">
-      <span class="service-kicker"><i></i> Redes</span>
-      <h3>Contenido para redes</h3>
-      <p>Creamos diseños, reels, videos y textos publicitarios para fortalecer la presencia digital de tu negocio en redes sociales.</p>
-      <a class="service-cta" data-service-title="Contenido para redes" href="#" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.27-.13-1.6-.79-1.84-.88-.25-.09-.43-.13-.61.14-.18.26-.7.88-.86 1.06-.16.18-.31.2-.58.07-.27-.13-1.13-.42-2.16-1.35-.8-.71-1.33-1.58-1.49-1.84-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.61-1.47-.83-2.02-.22-.53-.44-.46-.61-.47h-.52c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.33.97 2.62 1.1 2.8.13.18 1.9 2.91 4.6 4.08.64.27 1.14.43 1.53.55.64.2 1.22.17 1.68.1.51-.08 1.6-.65 1.83-1.28.22-.63.22-1.17.16-1.28-.07-.11-.25-.18-.52-.31ZM12.04 2C6.52 2 2.04 6.47 2.04 12c0 1.77.46 3.43 1.26 4.88L2 22l5.28-1.38A9.95 9.95 0 0 0 12.04 22C17.56 22 22.04 17.53 22.04 12S17.56 2 12.04 2Zm0 18.19c-1.56 0-3.02-.42-4.28-1.15l-.31-.18-3.13.82.84-3.05-.2-.32A8.12 8.12 0 0 1 3.86 12c0-4.51 3.67-8.18 8.18-8.18s8.18 3.67 8.18 8.18-3.67 8.19-8.18 8.19Z"/></svg><span>Cotizar por WhatsApp</span></a>
-    </article>
-    <article class="service-card">
-      <span class="service-kicker"><i></i> Audio</span>
-      <h3>Cuña publicitaria</h3>
-      <p>Haz que tu negocio suene con una cuña promocional clara, profesional y efectiva, ideal para promociones y campañas.</p>
-      <a class="service-cta" data-service-title="Cuña publicitaria" href="#" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.27-.13-1.6-.79-1.84-.88-.25-.09-.43-.13-.61.14-.18.26-.7.88-.86 1.06-.16.18-.31.2-.58.07-.27-.13-1.13-.42-2.16-1.35-.8-.71-1.33-1.58-1.49-1.84-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.61-1.47-.83-2.02-.22-.53-.44-.46-.61-.47h-.52c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.33.97 2.62 1.1 2.8.13.18 1.9 2.91 4.6 4.08.64.27 1.14.43 1.53.55.64.2 1.22.17 1.68.1.51-.08 1.6-.65 1.83-1.28.22-.63.22-1.17.16-1.28-.07-.11-.25-.18-.52-.31ZM12.04 2C6.52 2 2.04 6.47 2.04 12c0 1.77.46 3.43 1.26 4.88L2 22l5.28-1.38A9.95 9.95 0 0 0 12.04 22C17.56 22 22.04 17.53 22.04 12S17.56 2 12.04 2Zm0 18.19c-1.56 0-3.02-.42-4.28-1.15l-.31-.18-3.13.82.84-3.05-.2-.32A8.12 8.12 0 0 1 3.86 12c0-4.51 3.67-8.18 8.18-8.18s8.18 3.67 8.18 8.18-3.67 8.19-8.18 8.19Z"/></svg><span>Cotizar por WhatsApp</span></a>
-    </article>
-  </div>
-</section>
+
 
 <section class="container sponsors-section" id="auspiciantes" data-site-view="auspiciantes" aria-labelledby="sponsors-title">
   <div class="sponsors-heading">
@@ -1199,7 +1219,7 @@
   </div>
 </section>
 
-<section class="container" id="publicidad" data-site-view="servicios"><div class="ad-banner"><div><strong>Tu marca también puede sonar aquí.</strong><p>Promociona tu negocio, evento o emprendimiento en Radio Méndez.<br>Consulta por espacios publicitarios y auspicios.</p></div><a class="primary" id="contact-ad" href="#" target="_blank" rel="noopener noreferrer">Consultar publicidad ↗</a></div></section>
+
 <section class="container social-section" id="redes" data-site-view="apoyar" aria-labelledby="redes-titulo">
   <div class="social-section-inner">
     <div><span class="overline">SÍGUENOS Y CONECTA</span><h2 id="redes-titulo">Somos Méndez TV, <span style="color:var(--green)">síguenos</span></h2><p>Noticias, música, entrevistas y transmisiones desde Morona Santiago. Encuéntranos en nuestras redes oficiales.</p></div>
@@ -1209,14 +1229,9 @@
 <a class="social-link youtube" data-social="youtube" href="https://www.youtube.com/@mendeztvoficial" target="_blank" rel="noopener noreferrer" aria-label="Seguir a Méndez TV en YouTube" title="YouTube de Méndez TV"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-yt"></use></svg></a></nav>
   </div>
 </section>
-<section class="container contact-section" id="contacto" data-site-view="servicios" aria-labelledby="contact-title">
-  <div class="contact-panel"><div class="contact-intro"><span class="overline">HABLEMOS</span><h2 id="contact-title">Contacto <span>Radio Méndez</span></h2><p>¿Quieres anunciar tu negocio, auspiciar un programa o solicitar un servicio de Méndez TV? Escríbenos directamente.</p><div class="contact-phone">WhatsApp: <strong>096 118 0749</strong></div></div>
-    <div class="contact-actions"><a class="contact-wa" id="contact-whatsapp" href="https://wa.me/593961180749?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20Radio%20M%C3%A9ndez." target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.65 15.02L2 22l5.1-1.34A10 10 0 1 0 12 2Zm0 18.16a8.1 8.1 0 0 1-4.13-1.13l-.3-.17-3.02.8.81-2.95-.19-.3A8.15 8.15 0 1 1 12 20.16Zm4.5-6.1c-.24-.12-1.42-.7-1.64-.77-.22-.08-.38-.12-.54.12-.16.23-.62.77-.76.93-.14.15-.28.17-.51.06-.24-.12-1-.37-1.92-1.2a7.2 7.2 0 0 1-1.33-1.63c-.14-.24-.01-.36.11-.47.11-.11.24-.28.36-.42.12-.14.16-.24.24-.39.08-.16.04-.3-.02-.42-.06-.11-.54-1.3-.74-1.8-.2-.47-.39-.4-.54-.41h-.46c-.16 0-.42.06-.64.3s-.84.83-.84 2.02.86 2.33.98 2.49c.12.16 1.7 2.59 4.12 3.63.58.25 1.03.39 1.38.5.58.18 1.09.16 1.5.09.46-.07 1.42-.58 1.63-1.14s.21-1.04.15-1.14c-.06-.1-.22-.16-.46-.28Z"/></svg> Escribir por WhatsApp <span aria-hidden="true">↗</span></a>
-    <a class="contact-outline" href="https://www.facebook.com/mendeztvec" target="_blank" rel="noopener noreferrer">Facebook de Méndez TV <span aria-hidden="true">↗</span></a><a class="contact-outline" href="https://www.instagram.com/mendeztvec/" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">↗</span></a></div>
-  </div>
-</section>
+
 </main>
-<footer><nav class="container site-footer-links" aria-label="Otras secciones"><a href="#radio">Radio en vivo</a><a href="#ranking">Ranking</a><a href="#programas">Programas y videos</a><a href="#deportes">Deportes</a><a href="#servicios">Servicios</a><a href="#auspiciantes">Auspiciantes</a><a href="#apoyar">Apoyar</a></nav><div class="container footer-row"><span><strong>RADIO MÉNDEZ</strong> · ¡La radio que te mueve! · Una producción de Méndez TV.</span><span>© <span id="year"></span> · Desde Morona Santiago para el mundo · Catálogo de servicios · <span class="version-label">v1.6.9 · 2026</span>.</span></div></footer>
+<footer><nav class="container site-footer-links" aria-label="Otras secciones"><a href="#radio">Radio en vivo</a><a href="#ranking">Ranking</a><a href="#programas">Programas y videos</a><a href="#deportes">Deportes</a><a href="#servicios">Servicios Méndez TV</a><a href="#auspiciantes">Auspiciantes</a><a href="#apoyar">Apoyar</a></nav><div class="container footer-row"><span><strong>RADIO MÉNDEZ</strong> · ¡La radio que te mueve! · Una producción de Méndez TV.</span><span>© <span id="year"></span> · Desde Morona Santiago para el mundo · Catálogo de servicios · <span class="version-label">v1.6.10 · 2026</span>.</span></div></footer>
 
 <div class="radio-mini" id="radio-mini" aria-label="Reproductor permanente Radio Méndez" hidden>
   <a class="radio-mini-label" href="#radio" aria-label="Ir al reproductor principal de Radio Méndez"><img src="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png" alt=""><span><strong class="radio-mini-title">Radio Méndez</strong><small class="radio-mini-sub" id="radio-mini-sub">¡La radio que te mueve!</small><small class="radio-mini-program" id="radio-mini-program">Programación: 09h–12h · 12h–14h · 20h–22h</small></span></a>
@@ -1567,7 +1582,7 @@
   $('donate-bank-fallback').href=donationWhatsapp+'?text='+encodeURIComponent('Hola, quisiera los datos para apoyar a Radio Méndez por transferencia.');
  }
 
- if('serviceWorker' in navigator && location.protocol==='https:'){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=1.6.9').catch(()=>{}))}
+ if('serviceWorker' in navigator && location.protocol==='https:'){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=1.6.10').catch(()=>{}))}
 })();
 </script>
 
@@ -1623,10 +1638,10 @@
 /* Navegación por vistas: un solo documento y un solo audio HTML5; cada URL # abre una pantalla propia. */
 (()=>{
  'use strict';
- const views=['inicio','nosotros','radio','ranking','mendez-tv','programas','deportes','servicios','auspiciantes','apoyar'];
+ const views=['inicio','nosotros','radio','ranking','mendez-tv','programas','deportes','auspiciantes','apoyar'];
  const routes={inicio:'inicio',nosotros:'nosotros',radio:'radio','programacion-radio':'radio',ranking:'ranking',top10:'ranking','top10-internacional':'ranking',programas:'programas',
-   'mendez-tv':'mendez-tv',noticias:'mendez-tv',videos:'programas',deportes:'deportes',servicios:'servicios',contacto:'servicios',
-   publicidad:'servicios',auspiciantes:'auspiciantes',apoyar:'apoyar',redes:'apoyar'};
+   'mendez-tv':'mendez-tv',noticias:'mendez-tv',videos:'programas',deportes:'deportes',servicios:'mendez-tv',contacto:'mendez-tv',
+   publicidad:'mendez-tv',auspiciantes:'auspiciantes',apoyar:'apoyar',redes:'apoyar'};
  const all=Array.from(document.querySelectorAll('[data-site-view]'));
  const nav=Array.from(document.querySelectorAll('#site-navigation a[href^="#"]'));
  function route(initial=false){
@@ -1635,7 +1650,7 @@
    document.body.dataset.currentView=view;
    all.forEach(node=>{if(node.dataset.siteView===view){node.setAttribute('data-site-active','');node.removeAttribute('aria-hidden')}else{node.removeAttribute('data-site-active');node.setAttribute('aria-hidden','true')}});
    nav.forEach(a=>{const h=a.getAttribute('href');if(h==='#'+raw || (h==='#ranking'&&view==='ranking') || (h==='#mendez-tv'&&view==='mendez-tv'&&raw!=='noticias'))a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
-   document.title=(view==='inicio'?'Radio Méndez':({'nosotros':'Nosotros','radio':'Radio en vivo','ranking':'Ranking · Top 10','mendez-tv':'Méndez TV · Noticias','programas':'Programas','deportes':'Deportes','servicios':'Servicios','auspiciantes':'Auspiciantes','apoyar':'Apoyar'}[view]+' | Radio Méndez'))+' — ¡La radio que te mueve!';
+   document.title=(view==='inicio'?'Radio Méndez':({'nosotros':'Nosotros','radio':'Radio en vivo','ranking':'Ranking · Top 10','mendez-tv':'Méndez TV · Noticias y servicios','programas':'Programas','deportes':'Deportes','servicios':'Servicios','auspiciantes':'Auspiciantes','apoyar':'Apoyar'}[view]+' | Radio Méndez'))+' — ¡La radio que te mueve!';
    const target=document.getElementById(raw);
    if(!initial && raw!==view && target && target.getAttribute('data-site-active')!==null){target.scrollIntoView({block:'start',behavior:'instant'})}
    else window.scrollTo({top:0,behavior:'instant'});

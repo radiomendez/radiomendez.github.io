@@ -1,0 +1,19 @@
+RADIO MÉNDEZ · ACTUALIZACIÓN v1.6.10
+
+CAMBIOS:
+1. «Nosotros»: banner de Méndez TV al inicio y texto institucional debajo.
+2. Retirados los botones de escuchar radio, leer noticias, nuestros programas y servicios/contacto de «Nosotros».
+3. Los 12 servicios y su formulario de contacto/WhatsApp se muestran dentro de la sección Méndez TV (después de las noticias).
+4. Los enlaces #servicios, #publicidad y #contacto muestran ahora la pantalla Méndez TV sin detener el audio.
+5. Conservados los rankings, la señal pública 8474, programas, noticias, PayPal y auspiciantes.
+
+PARA SUBIR A GITHUB:
+- Descomprime el ZIP de ACTUALIZACIÓN.
+- En el repositorio radiomendez/radiomendez.github.io, reemplaza index.html, sw.js y VERSION.txt.
+- Sube la imagen assets/banner-nosotros-mendez-tv-v1.6.10.png manteniendo la carpeta assets.
+- Puedes subir también este archivo LEEME (opcional).
+- Confirma con Commit changes.
+- IMPORTANTE: NO reemplaces config.js ni donaciones.js desde un paquete completo; esta actualización NO modifica sus valores.
+
+Enlace de prueba: https://radiomendez.github.io/#nosotros
+Servicios: https://radiomendez.github.io/#servicios
