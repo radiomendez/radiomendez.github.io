@@ -1,0 +1,21 @@
+RADIO MÉNDEZ — ACTUALIZACIÓN v1.6.15
+
+CAMBIOS
+- Inicio: menú original, después un carrusel que alterna programa y auspiciante cada 3 segundos.
+- El carrusel principal incluye flechas, indicadores y gesto de deslizamiento en móviles.
+- Debajo: información de Radio Méndez a la izquierda y un reproductor más compacto a la derecha. En celular/tablet apilamos los bloques para mantener legibilidad.
+- El reproductor y sus controles visibles solo están en Inicio. La radio continúa sonando si se navega a otras vistas, pues el audio no se reinicia. Para pausar/reanudar desde otra sección, regresar a Inicio.
+- Se mantienen las secciones independientes, noticias, ranking, PayPal, programación, auspiciantes y el streaming contratado.
+
+SUBIR A GITHUB
+Descomprime el ZIP de actualización y sube los archivos incluidos a la raíz del repositorio, conservando la estructura de carpetas.
+
+ARCHIVOS DE ESTA ACTUALIZACIÓN
+index.html
+inicio-compacto-1615.css
+mejoras.js
+sw.js
+VERSION.txt
+LEEME-v1.6.15.txt
+
+NO REEMPLAZAR config.js. La URL de audio pública sigue siendo la configurada para tu contrato (puerto 8474).

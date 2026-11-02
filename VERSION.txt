@@ -1,4 +1,4 @@
-Radio Méndez · v1.6.14
+Radio Méndez · v1.6.15
 Fecha: 2026-11-02
-Mejoras: nuevo reproductor horizontal, controles sincronizados, portada de programa según horario, panel anterior/próximo.
-Streaming: sin cambios (config.js no se modifica en esta actualización).
+Cambios: Inicio reordenado, carrusel mixto 3 segundos, reproductor compacto solo en Inicio.
+Streaming: se conserva config.js (puerto 8474).
