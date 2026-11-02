@@ -1,0 +1,24 @@
+RADIO MÉNDEZ — ACTUALIZACIÓN v1.6.14
+
+Cambios realizados:
+- Reproductor principal horizontal: carátula, nombre del programa, horario y controles.
+- Reproductor flotante compacto con reproducción sincronizada, volumen, compartir y acceso al programa.
+- Panel desplegable de programación: ANTERIOR / ACTUAL / PRÓXIMO, según hora de Ecuador.
+- Imagen del programa cuando tiene logotipo y símbolo de Radio Méndez como respaldo.
+- Visualizador neón/RGB decorativo, sin acceso al audio ni impacto en el streaming.
+- Se mantienen la navegación por secciones, las noticias, los rankings, PayPal y los auspiciantes.
+
+INSTALACIÓN EN GITHUB
+Sube a la raíz del repositorio, conservando los nombres:
+  index.html
+  radio-visual.js
+  reproductor-1614.css
+  reproductor-1614.js
+  sw.js
+  VERSION.txt (opcional)
+
+NO subas config.js: tu servidor del puerto 8474 permanece intacto.
+Después de confirmar los cambios, recarga usando Ctrl + F5 o una ventana privada.
+
+NOTA: La programación muestra el horario previsto, no verifica en tiempo real que el locutor esté conectado.
+Las ondas son efectos visuales (no analizan el audio de SHOUTcast).

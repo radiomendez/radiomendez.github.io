@@ -1,4 +1,4 @@
-/* Radio Méndez 1.6.7 · Ondas decorativas + horario semanal, sin tocar la conexión de audio */
+/* Radio Méndez 1.6.14 · Ondas decorativas + horario semanal, sin tocar la conexión de audio */
 (()=>{
  'use strict';
  const $=id=>document.getElementById(id);
@@ -86,6 +86,22 @@
      if(title)title.textContent='Radio Méndez · La radio que te mueve';
      if(detail)detail.textContent='Música y mixes en la señal online';
      if(miniLabel)miniLabel.textContent='Radio Méndez · Programación musical';
+   }
+   // v1.6.14: carátula del espacio programado y resumen desplegable del mini reproductor.
+   const picture=current?.img||fallback;
+   for(const id of ['studio-current-art','radio-mini-art']){
+     const img=$(id);
+     if(img && img.getAttribute('src')!==picture)img.setAttribute('src',picture);
+   }
+   const miniCurrent=$('mini-current-title');
+   const miniCurrentTime=$('mini-current-time');
+   if(miniCurrent)miniCurrent.textContent=current?.name||'Radio Méndez · Música y mixes';
+   if(miniCurrentTime)miniCurrentTime.textContent=current?time(current):'Programación musical';
+   for(const [prefix,slot] of [['prev',previous],['next',next]]){
+     const name=$('mini-'+prefix+'-title');
+     const hours=$('mini-'+prefix+'-time');
+     if(name)name.textContent=slot?.name||'Sin información';
+     if(hours)hours.textContent=slot?time(slot):'—';
    }
    const show=(side,program)=>{
      const title=$('radio-'+side+'-title');const hours=$('radio-'+side+'-time');const img=$('radio-'+side+'-img');

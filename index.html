@@ -14,7 +14,7 @@
   <meta property="og:image" content="https://radiomendez.github.io/assets/vista-previa-mendez-tv-radio-online-v1.5.5.jpg">
   <link rel="icon" type="image/png" href="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png">
   <link rel="apple-touch-icon" href="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png">
-  <meta name="app-version" content="1.6.13">
+  <meta name="app-version" content="1.6.14">
   <title>Radio Méndez | ¡La radio que te mueve!</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -797,7 +797,8 @@
     #contacto[data-site-view="mendez-tv"]{padding-bottom:56px;}
     @media(max-width:580px){.about-page{padding-top:18px}.about-shell{border-radius:16px}.about-content{padding:22px 19px 27px}.about-content h1{font-size:28px}.about-content p{line-height:1.75}}
 </style>
-  <link rel="stylesheet" href="./radio-visual.css?v=1.6.7">
+  <link rel="stylesheet" href="./radio-visual.css?v=1.6.14">
+  <link rel="stylesheet" href="./reproductor-1614.css?v=1.6.14">
   <script src="./config.js?v=1.6.5-stream8474"></script>
   <script src="./top10.js?v=1.3.2"></script>
   <script src="./videos.js?v=1.3.2"></script>
@@ -878,32 +879,45 @@
     </div>
    <div class="hero-actions"><button class="primary" id="hero-play" type="button"><svg class="btn-icon" viewBox="0 0 24 24"><path d="m8 5 12 7-12 7z"/></svg><span>Escuchar en vivo</span></button><a class="secondary" href="#programacion-radio">Ver programación radial ↗</a><a class="hero-support-link" href="#apoyar">❤ Apoya nuestra señal</a><a class="secondary" href="#mendez-tv">📰 Noticias Méndez TV</a><a class="secondary" href="#programas">▶ Producciones de Méndez TV</a></div>
  </div>
- <div class="radio-wrap"><div class="radio-card">
-   <div class="card-head"><small>RADIO MÉNDEZ · EN LÍNEA</small><span class="live-pill" id="radio-live-indicator" data-state="standby"><i class="radio-live-dot"></i> LISTA PARA ESCUCHAR</span></div>
-   <div class="vinyl" id="vinyl"><img src="./assets/icon-mendez-tv-radio-online-512-v1.5.5.png" alt="Símbolo circular oficial de Radio Méndez" loading="eager" width="512" height="512"></div>
-   <h2 class="track-title" id="live-title">Radio online · En directo</h2>
-   <p class="track-sub">Escúchanos desde cualquier lugar del mundo</p>
-   <div class="now-schedule" aria-label="Programa según horario de Ecuador"><span class="now-schedule-icon">♫</span><div class="now-schedule-info"><small id="show-slot-label">PROGRAMACIÓN DE RADIO MÉNDEZ</small><strong id="show-slot-title">Música y programación en vivo</strong><span id="show-slot-detail">La mañana 09h00–12h00 · El Vacilón 12h00–14h00</span></div></div>
-   <div class="adjacent-programs" aria-label="Programa anterior y próximo programa">
-     <div class="adjacent-program previous" aria-label="Programa anterior">
-       <span class="adjacent-kicker">‹ ANTERIOR</span>
-       <div class="adjacent-row"><img id="radio-prev-img" src="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png" alt="" loading="lazy"><div class="adjacent-content"><strong id="radio-prev-title">Programa anterior</strong><small id="radio-prev-time">Horario de Ecuador</small></div></div>
-     </div>
-     <div class="adjacent-program upcoming" aria-label="Próximo programa">
-       <span class="adjacent-kicker">PRÓXIMO ›</span>
-       <div class="adjacent-row"><img id="radio-next-img" src="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png" alt="" loading="lazy"><div class="adjacent-content"><strong id="radio-next-title">Próximo programa</strong><small id="radio-next-time">Horario de Ecuador</small></div></div>
-     </div>
+ <div class="radio-wrap"><div class="radio-card studio-player" id="studio-player">
+   <div class="card-head"><small>RADIO MÉNDEZ · SEÑAL ONLINE</small><span class="live-pill" id="radio-live-indicator" data-state="standby"><i class="radio-live-dot"></i> LISTA PARA ESCUCHAR</span></div>
+   <div class="studio-player-main">
+      <div class="vinyl" id="vinyl"><img id="studio-current-art" src="./assets/icon-mendez-tv-radio-online-512-v1.5.5.png" alt="Imagen del programa de Radio Méndez" width="512" height="512"></div>
+      <div class="studio-program-info">
+        <h2 class="track-title" id="live-title">RADIO MÉNDEZ</h2>
+        <p class="track-sub">¡La radio que te mueve!</p>
+        <div class="now-schedule" aria-label="Programación según horario de Ecuador"><span class="now-schedule-icon">♫</span><div class="now-schedule-info"><small id="show-slot-label">PROGRAMACIÓN DE RADIO MÉNDEZ</small><strong id="show-slot-title">Música y programación en vivo</strong><span id="show-slot-detail">Horarios de Ecuador</span></div></div>
+      </div>
+      <div class="studio-play-wrap">
+        <div class="player-control">
+         <button class="round" id="mute" type="button" title="Silenciar" aria-label="Silenciar audio"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5Zm4 4a4 4 0 0 1 0 6m3-9a8 8 0 0 1 0 12"/></svg></button>
+         <button class="play-big" id="play-button" type="button" aria-label="Reproducir radio" aria-pressed="false"><svg id="play-icon" viewBox="0 0 24 24"><path d="m8 4 12 8-12 8Z"/></svg></button>
+         <button class="round" id="reconnect" type="button" title="Reconectar transmisión" aria-label="Reconectar transmisión"><svg viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 6.8M20 4v7h-7"/></svg></button>
+        </div>
+      </div>
    </div>
-   <div class="radio-spectrum" id="radio-spectrum" data-theme="neon" aria-label="Visualizador animado decorativo de Radio Méndez">
+   <div class="radio-spectrum" id="radio-spectrum" data-theme="neon" aria-label="Visualizador decorativo de Radio Méndez">
        <div class="radio-spectrum-top"><span><i class="spectrum-led" aria-hidden="true"></i> ONDAS DE RADIO</span><div class="radio-theme-chooser" role="group" aria-label="Colores del visualizador"><button id="spectrum-neon" type="button" aria-pressed="true">VERDE NEÓN</button><button id="spectrum-rgb" type="button" aria-pressed="false">RGB</button></div></div>
        <div class="spectrum-wave" id="spectrum-wave" aria-hidden="true"></div>
-     </div>
-   <div class="equalizer" id="equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-   <div class="player-control"><button class="round" id="reconnect" type="button" title="Reconectar transmisión" aria-label="Reconectar transmisión"><svg viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 6.8M20 4v7h-7"/></svg></button><button class="play-big" id="play-button" type="button" aria-label="Reproducir radio" aria-pressed="false"><svg id="play-icon" viewBox="0 0 24 24"><path d="m8 4 12 8-12 8Z"/></svg></button><button class="round" id="mute" type="button" title="Silenciar" aria-label="Silenciar audio"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5Zm4 4a4 4 0 0 1 0 6m3-9a8 8 0 0 1 0 12"/></svg></button></div>
-   <div class="volume"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5Zm4 4a4 4 0 0 1 0 6m3-9a8 8 0 0 1 0 12"/></svg><input id="volume" type="range" min="0" max="100" value="80" aria-label="Volumen"><span id="volume-number">80%</span></div>
+   </div>
+   <div class="studio-player-bottom">
+      <div class="volume"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5Zm4 4a4 4 0 0 1 0 6m3-9a8 8 0 0 1 0 12"/></svg><input id="volume" type="range" min="0" max="100" value="80" aria-label="Volumen"><span id="volume-number">80%</span></div>
+      <div class="studio-utility-buttons">
+        <button id="studio-share" type="button" title="Compartir radio" aria-label="Compartir radio">↗ <span>Compartir</span></button>
+        <button id="studio-schedule-toggle" type="button" aria-expanded="false" aria-controls="studio-schedule-panel" title="Ver programa anterior y próximo">☷ <span>Programación</span></button>
+        <button id="studio-expand" type="button" title="Ampliar reproductor" aria-label="Ampliar reproductor">⛶ <span>Ampliar</span></button>
+      </div>
+   </div>
+   <div class="studio-schedule-panel" id="studio-schedule-panel" hidden>
+      <div class="adjacent-programs" aria-label="Programa anterior y próximo programa">
+        <div class="adjacent-program previous"><span class="adjacent-kicker">‹ ANTERIOR</span><div class="adjacent-row"><img id="radio-prev-img" src="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png" alt=""><div class="adjacent-content"><strong id="radio-prev-title">Programa anterior</strong><small id="radio-prev-time">Hora de Ecuador</small></div></div></div>
+        <div class="adjacent-program upcoming"><span class="adjacent-kicker">PRÓXIMO ›</span><div class="adjacent-row"><img id="radio-next-img" src="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png" alt=""><div class="adjacent-content"><strong id="radio-next-title">Próximo programa</strong><small id="radio-next-time">Hora de Ecuador</small></div></div></div>
+      </div>
+   </div>
+   <div class="equalizer" id="equalizer" hidden aria-hidden="true"></div>
    <p class="status" id="status" role="status" aria-live="polite">Presiona PLAY para escuchar la transmisión.</p>
-    <div class="card-utility-links"><a id="whatsapp" href="#" target="_blank" rel="noopener noreferrer" hidden>WhatsApp ↗</a><button id="share" type="button">↗ Compartir radio</button></div>
-  </div></div>
+   <div class="card-utility-links" hidden><a id="whatsapp" href="#" target="_blank" rel="noopener noreferrer" hidden>WhatsApp ↗</a><button id="share" type="button">Compartir radio</button></div>
+ </div></div>
 </section>
 <section class="container section radio-schedule-section" id="programacion-radio" data-site-view="radio" aria-labelledby="radio-schedule-title">
   <div class="section-title programs-header"><div><span class="overline">PROGRAMACIÓN OFICIAL · RADIO MÉNDEZ</span><h2 id="radio-schedule-title">En nuestra <span>radio</span></h2><p class="programs-intro">Disfruta tus mañanas, el vacilón del mediodía y las noches con Ángel Villa DJ. Escucha la señal desde el reproductor, sin salir de esta sección.</p></div></div>
@@ -1231,11 +1245,25 @@
 </section>
 
 </main>
-<footer class="site-footer-clean"><div class="container footer-row"><span><strong>RADIO MÉNDEZ</strong> · ¡La radio que te mueve!</span><span>© <span id="year"></span> · Todos los derechos reservados · <strong class="version-label">v1.6.13</strong></span></div></footer>
+<footer class="site-footer-clean"><div class="container footer-row"><span><strong>RADIO MÉNDEZ</strong> · ¡La radio que te mueve!</span><span>© <span id="year"></span> · Todos los derechos reservados · <strong class="version-label">v1.6.14</strong></span></div></footer>
 
 <div class="radio-mini" id="radio-mini" aria-label="Reproductor permanente Radio Méndez" hidden>
-  <a class="radio-mini-label" href="#radio" aria-label="Ir al reproductor principal de Radio Méndez"><img src="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png" alt=""><span><strong class="radio-mini-title">Radio Méndez</strong><small class="radio-mini-sub" id="radio-mini-sub">¡La radio que te mueve!</small><small class="radio-mini-program" id="radio-mini-program">Programación: 09h–12h · 12h–14h · 20h–22h</small></span></a>
-  <span class="radio-mini-signal" id="radio-mini-signal" data-state="standby">LISTA</span><div class="radio-mini-controls"><button type="button" class="radio-mini-utility share-action" id="radio-mini-share" aria-label="Compartir Radio Méndez" title="Compartir radio">↗</button><button type="button" class="radio-mini-utility" id="radio-mini-reconnect" aria-label="Reconectar radio" title="Reconectar radio">↻</button><input class="radio-mini-volume" id="radio-mini-volume" type="range" min="0" max="100" value="80" aria-label="Volumen del reproductor permanente"><button type="button" class="radio-mini-play" id="radio-mini-play" aria-label="Reproducir radio" aria-pressed="false">▶</button></div>
+  <div class="radio-mini-bar">
+   <a class="radio-mini-label" href="#radio" aria-label="Ir a Radio Méndez"><img id="radio-mini-art" src="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png" alt=""><span><strong class="radio-mini-title">RADIO MÉNDEZ</strong><small class="radio-mini-sub" id="radio-mini-sub">¡La radio que te mueve!</small><small class="radio-mini-program" id="radio-mini-program">Programación de Radio Méndez</small></span></a>
+   <span class="radio-mini-signal" id="radio-mini-signal" data-state="standby">LISTA</span>
+   <div class="radio-mini-controls">
+    <button class="radio-mini-utility" id="radio-mini-mute" type="button" title="Silenciar" aria-label="Silenciar radio">🔊</button>
+    <button class="radio-mini-play" id="radio-mini-play" type="button" aria-label="Reproducir radio" aria-pressed="false">▶</button>
+    <input class="radio-mini-volume" id="radio-mini-volume" type="range" min="0" max="100" value="80" aria-label="Volumen del reproductor permanente">
+    <button type="button" class="radio-mini-utility" id="radio-mini-schedule-toggle" aria-label="Ver programación" aria-expanded="false" aria-controls="radio-mini-drawer" title="Ver programación">☷</button>
+    <button type="button" class="radio-mini-utility share-action" id="radio-mini-share" aria-label="Compartir Radio Méndez" title="Compartir radio">↗</button>
+    <button type="button" class="radio-mini-utility" id="radio-mini-reconnect" aria-label="Reconectar radio" title="Reconectar radio">↻</button>
+    <a class="radio-mini-utility radio-mini-expand" href="#radio" aria-label="Ver reproductor completo" title="Ver reproductor completo">⛶</a>
+   </div>
+  </div>
+  <div class="radio-mini-drawer" id="radio-mini-drawer" hidden>
+     <div class="radio-mini-drawer-grid"><div><small>‹ ANTERIOR</small><strong id="mini-prev-title">Programa anterior</strong><span id="mini-prev-time">--</span></div><div><small>PROGRAMA ACTUAL</small><strong id="mini-current-title">Radio Méndez</strong><span id="mini-current-time">--</span></div><div><small>PRÓXIMO ›</small><strong id="mini-next-title">Próximo programa</strong><span id="mini-next-time">--</span></div></div>
+  </div>
 </div>
 <audio id="radio-audio" preload="none" playsinline></audio>
 <script src="./auspiciantes.js"></script>
@@ -1297,10 +1325,11 @@
  $('volume').addEventListener('input',e=>{audio.volume=Number(e.target.value)/100;audio.muted=false;$('volume-number').textContent=e.target.value+'%';$('radio-mini-volume').value=e.target.value});
  $('radio-mini-volume').addEventListener('input',e=>{audio.volume=Number(e.target.value)/100;audio.muted=false;$('volume').value=e.target.value;$('volume-number').textContent=e.target.value+'%'});
  audio.volume=.8;
- $('mute').addEventListener('click',()=>{audio.muted=!audio.muted;$('mute').setAttribute('aria-label',audio.muted?'Activar sonido':'Silenciar audio');$('volume-number').textContent=audio.muted?'0%':Math.round(audio.volume*100)+'%'});
+ $('mute').addEventListener('click',()=>{audio.muted=!audio.muted;$('mute').setAttribute('aria-label',audio.muted?'Activar sonido':'Silenciar audio');$('volume-number').textContent=audio.muted?'0%':Math.round(audio.volume*100)+'%';$('radio-mini-mute').textContent=audio.muted?'🔇':'🔊'});
+ $('radio-mini-mute').addEventListener('click',()=> $('mute').click());
  $('descripcion').textContent=conf.descripcion||$('descripcion').textContent;
  $('ubicacion').textContent=conf.ubicacion||$('ubicacion').textContent;
- $('live-title').textContent=conf.tituloEnVivo||$('live-title').textContent;
+ $('live-title').textContent='RADIO MÉNDEZ';
  document.title=(conf.nombre||'Radio Méndez')+' | ¡La radio que te mueve!';
  $('year').textContent=new Date().getFullYear();
  const safeURL=(v)=>{try{const url=new URL(v);return ['https:','http:'].includes(url.protocol)?url.href:''}catch{return ''}};
@@ -1582,7 +1611,7 @@
   $('donate-bank-fallback').href=donationWhatsapp+'?text='+encodeURIComponent('Hola, quisiera los datos para apoyar a Radio Méndez por transferencia.');
  }
 
- if('serviceWorker' in navigator && location.protocol==='https:'){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=1.6.13').catch(()=>{}))}
+ if('serviceWorker' in navigator && location.protocol==='https:'){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=1.6.14').catch(()=>{}))}
 })();
 </script>
 
@@ -1694,6 +1723,7 @@
 })();
 </script>
 <script src="./mejoras.js?v=1.6.7"></script>
-<script src="./radio-visual.js?v=1.6.7"></script>
+<script src="./radio-visual.js?v=1.6.14"></script>
+<script src="./reproductor-1614.js?v=1.6.14"></script>
 </body>
 </html>
