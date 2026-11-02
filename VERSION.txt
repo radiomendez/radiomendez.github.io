@@ -1,4 +1,3 @@
-Radio Méndez · versión 1.6.7
-Base v1.6.6 · 28/10/2026
-Reproductor con ondas neón/RGB, programa anterior y próximo, transiciones entre páginas y recarga en sección actual al inicio.
-Streaming público: 8474 (config.js no se incluye en la actualización).
+Radio Méndez — versión 1.6.8
+Actualización: encabezado estilo portal, menú simplificado y reloj de Ecuador.
+Base: versión 1.6.7.

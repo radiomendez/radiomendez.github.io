@@ -1,0 +1,22 @@
+RADIO MÉNDEZ — ACTUALIZACIÓN v1.6.8 (ENCABEZADO)
+
+Archivo: ACTUALIZAR_RADIO_MENDEZ_v1.6.8_ENCABEZADO.zip
+
+CAMBIOS
+- Encabezado blanco al estilo de la referencia compartida.
+- Tipografía Montserrat en la cabecera (con alternativas locales).
+- Enlaces: INICIO, NOSOTROS, NOTICIAS, RANKING, VIDEOS.
+- Enlace derecho RADIO MÉNDEZ y hora real de Ecuador continental.
+- No se agrega el botón MENÚ, hamburguesa ni acceso de usuario.
+- Se agrega pantalla NOSOTROS para que el nuevo enlace funcione.
+- Accesos secundarios a secciones existentes en el pie de página.
+- El reproductor, el streaming y las secciones existentes se conservan.
+
+PARA ACTUALIZAR GITHUB
+1. Descomprime el ZIP de ACTUALIZACIÓN.
+2. Sube index.html, sw.js, VERSION.txt y LEEME-v1.6.8.txt a la raíz del repositorio radiomendez.github.io.
+3. Acepta reemplazar index.html y sw.js. Haz Commit changes.
+4. No reemplaces config.js, donaciones.js ni noticias.js.
+5. Abre https://radiomendez.github.io/?v=1.6.8 y actualiza con Ctrl+F5 si fuera necesario.
+
+NOTA: La hora en pantalla usa America/Guayaquil; la reproducción no se reinicia al navegar dentro de la web.

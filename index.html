@@ -14,8 +14,11 @@
   <meta property="og:image" content="https://radiomendez.github.io/assets/vista-previa-mendez-tv-radio-online-v1.5.5.jpg">
   <link rel="icon" type="image/png" href="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png">
   <link rel="apple-touch-icon" href="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png">
-  <meta name="app-version" content="1.6.7">
+  <meta name="app-version" content="1.6.8">
   <title>Radio Méndez | ¡La radio que te mueve!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root { color-scheme: dark; --bg:#030C23; --surface:rgba(8,28,73,.92); --edge:rgba(41,159,255,.31); --txt:#f8fbff; --muted:#b8cbe7; --cyan:#37c5ff; --blue:#196eff; --pink:#49a5ff; --green:#39baff; }
     * { box-sizing:border-box; }
@@ -792,10 +795,17 @@
   <symbol id="icon-yt" viewBox="0 0 24 24"><path d="M23.5 6.2a2.9 2.9 0 0 0-2.05-2.05C19.64 3.66 12 3.66 12 3.66s-7.64 0-9.45.49A2.9 2.9 0 0 0 .5 6.2 30.5 30.5 0 0 0 0 12a30.5 30.5 0 0 0 .5 5.8 2.9 2.9 0 0 0 2.05 2.05c1.81.49 9.45.49 9.45.49s7.64 0 9.45-.49a2.9 2.9 0 0 0 2.05-2.05A30.5 30.5 0 0 0 24 12a30.5 30.5 0 0 0-.5-5.8ZM9.6 15.57V8.43L15.84 12 9.6 15.57Z"/></symbol>
 </svg>
 <div class="backdrop" aria-hidden="true"></div>
-<header class="container nav">
-  <a class="brand" href="#inicio" aria-label="Radio Méndez, inicio"><img src="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png" alt=""><span class="brand-name">MÉNDEZ<small class="brand-sub">TV &amp; RADIO ONLINE</small></span></a>
-  
-  <nav class="nav-links" id="site-navigation" aria-label="Navegación principal"><a href="#inicio">Inicio</a><a href="#radio">Radio en vivo</a><a href="#mendez-tv">Méndez TV</a><a href="#programas">Programas</a><a href="#deportes">Deportes</a><a href="#servicios">Servicios</a><a href="#auspiciantes">Auspiciantes</a><a href="#apoyar">❤️ Apoyar</a></nav>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="#inicio" aria-label="Radio Méndez, inicio"><img src="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png" alt=""><span class="brand-name">MÉNDEZ<small class="brand-sub">TV &amp; RADIO ONLINE</small></span></a>
+    <nav class="nav-links" id="site-navigation" aria-label="Navegación principal">
+      <a href="#inicio">INICIO</a><a href="#nosotros">NOSOTROS</a><a href="#mendez-tv">NOTICIAS</a><a href="#top10">RANKING</a><a href="#videos">VIDEOS</a>
+    </nav>
+    <a class="station-status" href="#radio" aria-label="Ir a Radio Méndez en vivo">
+      <span class="station-status-name">RADIO MÉNDEZ</span>
+      <span class="station-status-clock">HORA: <time id="header-ecuador-time" aria-label="Hora actual de Ecuador">--:--</time></span>
+    </a>
+  </div>
 </header>
 <main id="site-main">
 <section class="container portal-home" id="inicio" data-site-view="inicio" data-site-active="true" aria-labelledby="portal-heading">
@@ -820,6 +830,20 @@
   <div class="portal-latest"><div><span class="overline">NOVEDADES DEL MEDIO</span><h2>Lo último de <span>Méndez TV</span></h2><p id="portal-latest-summary">Próximamente, las noticias de Méndez TV en esta sección.</p></div><a class="secondary" href="#mendez-tv">Todas las noticias ↗</a></div>
 </section>
 
+<section class="container about-page" id="nosotros" data-site-view="nosotros" aria-labelledby="about-heading">
+  <div class="about-shell">
+    <span class="overline">CONOCE NUESTRO MEDIO</span>
+    <h1 id="about-heading">Nosotros · Radio Méndez</h1>
+    <p><strong>Radio Méndez</strong> es una señal digital desde Morona Santiago, Ecuador. Compartimos música, entretenimiento y programación con la identidad de <strong>¡La radio que te mueve!</strong></p>
+    <p>Somos una producción de <strong>Méndez TV</strong>, medio digital que también presenta noticias, reportajes, entrevistas y contenidos de nuestra comunidad.</p>
+    <div class="about-links">
+      <a class="primary" href="#radio">▶ Escuchar radio</a>
+      <a class="secondary" href="#mendez-tv">Leer noticias</a>
+      <a class="secondary" href="#programas">Nuestros programas</a>
+      <a class="secondary" href="#servicios">Servicios y contacto</a>
+    </div>
+  </div>
+</section>
 <section class="container hero" id="radio" data-site-view="radio">
  <div>
    <span class="eyebrow"><span class="dot"></span> RADIO ONLINE · MORONA SANTIAGO</span>
@@ -1179,7 +1203,7 @@
   </div>
 </section>
 </main>
-<footer><div class="container footer-row"><span><strong>RADIO MÉNDEZ</strong> · ¡La radio que te mueve! · Una producción de Méndez TV.</span><span>© <span id="year"></span> · Desde Morona Santiago para el mundo · Catálogo de servicios · <span class="version-label">v1.6.7 · 2026</span>.</span></div></footer>
+<footer><nav class="container site-footer-links" aria-label="Otras secciones"><a href="#radio">Radio en vivo</a><a href="#programas">Programas</a><a href="#deportes">Deportes</a><a href="#servicios">Servicios</a><a href="#auspiciantes">Auspiciantes</a><a href="#apoyar">Apoyar</a></nav><div class="container footer-row"><span><strong>RADIO MÉNDEZ</strong> · ¡La radio que te mueve! · Una producción de Méndez TV.</span><span>© <span id="year"></span> · Desde Morona Santiago para el mundo · Catálogo de servicios · <span class="version-label">v1.6.8 · 2026</span>.</span></div></footer>
 
 <div class="radio-mini" id="radio-mini" aria-label="Reproductor permanente Radio Méndez" hidden>
   <a class="radio-mini-label" href="#radio" aria-label="Ir al reproductor principal de Radio Méndez"><img src="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png" alt=""><span><strong class="radio-mini-title">Radio Méndez</strong><small class="radio-mini-sub" id="radio-mini-sub">¡La radio que te mueve!</small><small class="radio-mini-program" id="radio-mini-program">Programación: 09h–12h · 12h–14h · 20h–22h</small></span></a>
@@ -1530,7 +1554,7 @@
   $('donate-bank-fallback').href=donationWhatsapp+'?text='+encodeURIComponent('Hola, quisiera los datos para apoyar a Radio Méndez por transferencia.');
  }
 
- if('serviceWorker' in navigator && location.protocol==='https:'){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=1.6.7').catch(()=>{}))}
+ if('serviceWorker' in navigator && location.protocol==='https:'){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=1.6.8').catch(()=>{}))}
 })();
 </script>
 
@@ -1586,8 +1610,8 @@
 /* Navegación por vistas: un solo documento y un solo audio HTML5; cada URL # abre una pantalla propia. */
 (()=>{
  'use strict';
- const views=['inicio','radio','mendez-tv','programas','deportes','servicios','auspiciantes','apoyar'];
- const routes={inicio:'inicio',radio:'radio','programacion-radio':'radio',top10:'radio','top10-internacional':'radio',programas:'programas',
+ const views=['inicio','nosotros','radio','mendez-tv','programas','deportes','servicios','auspiciantes','apoyar'];
+ const routes={inicio:'inicio',nosotros:'nosotros',radio:'radio','programacion-radio':'radio',top10:'radio','top10-internacional':'radio',programas:'programas',
    'mendez-tv':'mendez-tv',videos:'programas',deportes:'deportes',servicios:'servicios',contacto:'servicios',
    publicidad:'servicios',auspiciantes:'auspiciantes',apoyar:'apoyar',redes:'apoyar'};
  const all=Array.from(document.querySelectorAll('[data-site-view]'));
@@ -1597,8 +1621,8 @@
    const view=routes[raw]||'inicio';
    document.body.dataset.currentView=view;
    all.forEach(node=>{if(node.dataset.siteView===view){node.setAttribute('data-site-active','');node.removeAttribute('aria-hidden')}else{node.removeAttribute('data-site-active');node.setAttribute('aria-hidden','true')}});
-   nav.forEach(a=>{if(a.getAttribute('href')==='#'+view)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
-   document.title=(view==='inicio'?'Radio Méndez':({'radio':'Radio en vivo','mendez-tv':'Méndez TV · Noticias','programas':'Programas','deportes':'Deportes','servicios':'Servicios','auspiciantes':'Auspiciantes','apoyar':'Apoyar'}[view]+' | Radio Méndez'))+' — ¡La radio que te mueve!';
+   nav.forEach(a=>{const h=a.getAttribute('href');if(h==='#'+raw || (h==='#inicio'&&view==='inicio') || (h==='#mendez-tv'&&view==='mendez-tv'))a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
+   document.title=(view==='inicio'?'Radio Méndez':({'nosotros':'Nosotros','radio':'Radio en vivo','mendez-tv':'Méndez TV · Noticias','programas':'Programas','deportes':'Deportes','servicios':'Servicios','auspiciantes':'Auspiciantes','apoyar':'Apoyar'}[view]+' | Radio Méndez'))+' — ¡La radio que te mueve!';
    const target=document.getElementById(raw);
    if(!initial && raw!==view && target && target.getAttribute('data-site-active')!==null){target.scrollIntoView({block:'start',behavior:'instant'})}
    else window.scrollTo({top:0,behavior:'instant'});
@@ -1631,6 +1655,16 @@
 })();
 </script>
 
+<script>
+/* Reloj local fijo de Ecuador continental: independiente de la zona horaria del oyente. */
+(()=>{
+ const clock=document.getElementById('header-ecuador-time');
+ if(!clock)return;
+ const fmt=new Intl.DateTimeFormat('es-EC',{timeZone:'America/Guayaquil',hour:'2-digit',minute:'2-digit',hourCycle:'h23'});
+ const tick=()=>{clock.textContent=fmt.format(new Date())};
+ tick();setInterval(tick,20000);
+})();
+</script>
 <script src="./mejoras.js?v=1.6.7"></script>
 <script src="./radio-visual.js?v=1.6.7"></script>
 </body>

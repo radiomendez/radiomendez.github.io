@@ -1,6 +1,6 @@
-/* Méndez TV & Radio Online / Radio Méndez · v1.6.7 */
-const CACHE='radio-mendez-v1.6.7-vacilon-20261028-stream8474';
-const CORE=['./','./index.html','./config.js','./top10.js','./videos.js','./auspiciantes.js','./donaciones.js','./noticias.js','./mejoras.js','./radio-visual.js','./radio-visual.css','./assets/logo-mendez-tv-radio-online-v1.5.5.png','./assets/icon-mendez-tv-radio-online-192-v1.5.5.png','./assets/icon-mendez-tv-radio-online-512-v1.5.5.png','./assets/vista-previa-mendez-tv-radio-online-v1.5.5.jpg','./assets/programa-el-vacile-de-villa-v1.5.9.png','./assets/programa-la-manana-que-te-mueve-v1.6.5.png','./assets/programa-el-vacilon-del-mediodia-v1.6.7.png'];
+/* Méndez TV & Radio Online / Radio Méndez · v1.6.8 */
+const CACHE='radio-mendez-v1.6.8-vacilon-20261028-stream8474';
+const CORE=['./','./index.html','./config.js','./top10.js','./videos.js','./auspiciantes.js','./donaciones.js','./noticias.js','./mejoras.js','./radio-visual.js','./radio-visual.css','./assets/logo-mendez-tv-radio-online-v1.5.5.png','./assets/icon-mendez-tv-radio-online-192-v1.5.5.png','./assets/icon-mendez-tv-radio-online-512-v1.5.5.png','./assets/vista-previa-mendez-tv-radio-online-v1.5.5.jpg','./assets/programa-el-vacile-de-villa-v1.5.9.png','./assets/programa-la-manana-que-te-mueve-v1.6.5.png','./assets/programa-el-vacilon-del-mediodia-v1.6.8.png'];
 self.addEventListener('install',event=>{
  event.waitUntil(caches.open(CACHE).then(cache=>Promise.allSettled(CORE.map(path=>cache.add(path)))).then(()=>self.skipWaiting()));
 });
