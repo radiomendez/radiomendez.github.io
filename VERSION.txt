@@ -1,4 +1,4 @@
-Radio Méndez · v1.6.11
+Radio Méndez · v1.6.12
 Fecha: 2026-11-02
-Cambios: tema blanco y azul + pie de página minimalista.
+Cambios: ajustes visuales blanco + azul con más azul en tarjetas y recuadros.
 Streaming: sin cambios (se conserva config.js).

@@ -1,9 +1,9 @@
-/* RADIO MÉNDEZ 1.6.11 · Tema blanco + azul
+/* RADIO MÉNDEZ 1.6.12 · Tema blanco + azul
    Respeta el reproductor, los paneles multimedia azules y las interacciones existentes. */
 :root{
   color-scheme: light;
   --bg:#f6f9ff;
-  --surface:#ffffff;
+  --surface:#eef6ff;
   --edge:rgba(24,92,187,.21);
   --txt:#112b52;
   --muted:#496380;
@@ -12,10 +12,10 @@
   --pink:#1678dd;
   --green:#0b80d0;
 }
-html{background:#f7faff}
+html{background:#edf5ff}
 body{
-  background:#f7faff!important;
-  background-image:linear-gradient(180deg,#fff 0,#f4f8ff 55%,#fff 100%)!important;
+  background:#edf5ff!important;
+  background-image:linear-gradient(180deg,#edf5ff 0,#f8fbff 32%,#e7f1ff 100%)!important;
   color:#112d54;
 }
 .backdrop{
@@ -51,8 +51,8 @@ header,.site-header{color:#0b2e5d}
 /* Inicio luminoso y consistente con azul institucional */
 .portal-hero{
   color:#113868;
-  background:linear-gradient(125deg,#fff 0%,#f5f9ff 53%,#e4f0ff 100%);
-  border:1px solid #cddff6;
+  background:linear-gradient(125deg,#eaf4ff 0%,#f7fbff 48%,#dbeaff 100%);
+  border:1px solid #bcd8f8;
   box-shadow:0 14px 44px rgba(29,85,158,.085);
 }
 .portal-hero h1 em{color:#0a76d1}
@@ -61,17 +61,17 @@ header,.site-header{color:#0b2e5d}
 .portal-brand-mark span{color:#2664a6}
 .portal-brand-mark img{filter:drop-shadow(0 11px 15px rgba(16,93,183,.15))}
 .portal-tile{
-  background:#fff;border:1px solid #d3e3f6;
+  background:linear-gradient(180deg,#eef6ff 0%,#f9fbff 100%);border:1px solid #c4daf5;
   box-shadow:0 10px 30px rgba(26,84,153,.055)
 }
-.portal-tile:hover{background:#f1f7ff;border-color:#7cb8ef;box-shadow:0 13px 32px rgba(22,85,155,.11)}
+.portal-tile:hover{background:#e3f0ff;border-color:#64a9e8;box-shadow:0 13px 32px rgba(22,85,155,.14)}
 .portal-tile strong{color:#133e77}
 .portal-tile small{color:#5b7493}
 .portal-tile-icon,.portal-tile-arrow{color:#166cca}
 .portal-latest{border-top-color:#d6e4f4}
 .portal-latest h2 span{color:#0a7dce}
 /* Nosotros: la imagen original permanece intacta; la caja de lectura es blanca. */
-.about-shell{background:#fff;border:1px solid #d1e3f8;box-shadow:0 18px 42px rgba(28,93,166,.09)}
+.about-shell{background:linear-gradient(180deg,#edf6ff 0%,#ffffff 100%);border:1px solid #c5dcf8;box-shadow:0 18px 42px rgba(28,93,166,.11)}
 .about-content h1{color:#0b3673}
 .about-content p{color:#425e7e}
 .about-content p strong{color:#0a59af}
@@ -100,14 +100,14 @@ header,.site-header{color:#0b2e5d}
 /* Proyectos, servicios y noticias sobre un fondo más claro. */
 .services-head h2 span,.videos-heading h2 span,.sponsors-heading h2 span{color:#137ed0}
 .services-tip{background:#ecf5ff;border-color:#bedcfb;color:#215a99}
-.tv-news-shell{background:#fff;border:1px solid #d1e2f5;box-shadow:0 14px 39px rgba(31,91,169,.07);color:#153e79}
+.tv-news-shell{background:linear-gradient(180deg,#ecf5ff 0%,#ffffff 100%);border:1px solid #c7dbf5;box-shadow:0 14px 39px rgba(31,91,169,.09);color:#153e79}
 .tv-news-title{color:#153e79}
 .tv-news-title em{color:#157bce}
 .tv-news-summary{color:#536f90}
 .tv-news-kicker{color:#1370c7}
 .tv-news-filter{background:#edf5ff;color:#245488;border-color:#c4dcf7}
 .tv-news-filter[aria-pressed="true"]{background:#176bc8;color:#fff;border-color:#176bc8}
-.tv-news-card{background:#f8fbff;color:#143d76;border:1px solid #d7e6f9}
+.tv-news-card{background:#edf6ff;color:#143d76;border:1px solid #c9ddf6}
 .tv-news-card p{color:#536c88}
 .tv-news-meta{color:#176bbe}
 .tv-news-open{background:#e1f0ff;color:#145eaa;border-color:#b3d8fb}
@@ -122,7 +122,7 @@ header,.site-header{color:#0b2e5d}
 .videos-channel:hover{background:#ddecff}
 .sports-hero h2{color:#fff}
 /* Auspiciantes: panel blanco con banners originales sin alteraciones */
-.sponsor-carousel{background:#fff;border:1px solid #d2e1f4;box-shadow:0 13px 32px rgba(31,91,169,.08)}
+.sponsor-carousel{background:linear-gradient(180deg,#eef6ff 0%,#ffffff 100%);border:1px solid #c7dbf4;box-shadow:0 13px 32px rgba(31,91,169,.10)}
 .sponsor-display-header strong{color:#175fae}
 .sponsor-display-header a{color:#1459a6}
 .sponsor-brand{color:#164477}
@@ -132,11 +132,11 @@ header,.site-header{color:#0b2e5d}
 .sponsor-dot{background:#bfd1e6}
 .sponsor-dot[aria-current="true"]{background:#1b7ad5}
 .sponsors-heading .sponsor-legend{color:#26568c;background:#f0f7ff;border-color:#cae0f9}
-.sponsors-foot{background:#f3f8ff;border-color:#d2e2f5}
+.sponsors-foot{background:#eaf4ff;border-color:#c7dcf4}
 .sponsors-foot p,.sponsors-note small{color:#536d89}
 /* Pie de página simplificado — sin menú ni enlaces suplementarios. */
 .site-footer-clean{
-  background:linear-gradient(180deg,#ffffff 0%,#edf5ff 100%);
+  background:linear-gradient(180deg,#e7f1ff 0%,#dbeaff 100%);
   border-top:2px solid #176cca;
   color:#31537e;
   padding:24px 0 max(32px,env(safe-area-inset-bottom));

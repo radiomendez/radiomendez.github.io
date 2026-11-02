@@ -1,0 +1,16 @@
+RADIO MÉNDEZ · ACTUALIZACIÓN v1.6.12
+
+Cambios:
+- Se redujo el blanco excesivo de la web.
+- Los recuadros y tarjetas principales ahora tienen fondos azul claro y bordes azules.
+- Se conserva el reproductor, el streaming, PayPal, ranking, noticias y la programación.
+- Pie de página limpio, manteniendo nombre, eslogan, derechos y versión.
+
+INSTALACIÓN EN GITHUB
+Descomprime y sube a la raíz del repositorio estos archivos:
+  index.html
+  tema-blanco-azul.css
+  sw.js
+  VERSION.txt (opcional)
+
+NO reemplaces config.js. Si ves el diseño anterior, limpia caché con Ctrl+F5.
