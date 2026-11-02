@@ -1,0 +1,14 @@
+RADIO MÉNDEZ · ACTUALIZACIÓN v1.6.13
+
+- Restauración completa del diseño azul oscuro original anterior a v1.6.11.
+- Pie de página simplificado: nombre, eslogan, derechos de autor y versión.
+- No se modifica streaming, programación, rankings, noticias, auspiciante ni PayPal.
+
+Sube a la raíz de tu repositorio GitHub:
+ index.html
+ sw.js
+ VERSION.txt (opcional)
+
+No subas tema-blanco-azul.css; el archivo ya no se utiliza.
+No reemplaces config.js.
+Tras publicar, recarga con Ctrl + F5.

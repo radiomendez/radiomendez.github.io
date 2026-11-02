@@ -1,4 +1,4 @@
-Radio Méndez · v1.6.12
+Radio Méndez · v1.6.13
 Fecha: 2026-11-02
-Cambios: ajustes visuales blanco + azul con más azul en tarjetas y recuadros.
-Streaming: sin cambios (se conserva config.js).
+Cambios: restaurado tema azul oscuro original (basado en v1.6.10), pie de página minimalista.
+Streaming: no se modifica config.js.
