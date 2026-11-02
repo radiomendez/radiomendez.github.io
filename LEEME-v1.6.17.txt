@@ -1,0 +1,11 @@
+RADIO MÉNDEZ · ACTUALIZACIÓN v1.6.17
+
+Cambios:
+- Reproductor flotante centrado en la parte inferior.
+- Diseño más corto y compacto.
+- Muestra icono, nombre de la radio, ondas animadas, botón play/pausa y actualizar.
+- Se mantienen las demás secciones y el streaming actual.
+
+Instalación:
+Sube index.html, reproductor-1614.css, radio-visual.css, reproductor-1614.js, sw.js y VERSION.txt a la raíz del repositorio.
+No reemplaces config.js.

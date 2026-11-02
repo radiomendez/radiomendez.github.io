@@ -1,4 +1,4 @@
-Radio Méndez · v1.6.16
+Radio Méndez · v1.6.17
 Fecha: 2026-11-02
-Cambios: INICIO pasa a RADIO MÉNDEZ en la navegación y se elimina el acceso NOTICIAS independiente. Las noticias se conservan dentro de MÉNDEZ TV.
+Cambios: reproductor flotante centrado en la parte inferior, más corto y compacto, con icono, nombre de la radio, ondas, botón play/pausa y actualizar.
 Streaming: sin cambios; conservar config.js actual.

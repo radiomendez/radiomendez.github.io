@@ -65,7 +65,7 @@
 .radio-mini .radio-mini-drawer-grid small{color:#83ffd1;font-size:9px;font-weight:900;letter-spacing:.9px}
 .radio-mini .radio-mini-drawer-grid strong{font-size:12px;overflow-wrap:anywhere}
 .radio-mini .radio-mini-drawer-grid span{font-size:11px;color:#b3d3ea}
-body{padding-bottom:105px}
+body{padding-bottom:96px}
 @media(max-width:860px){
   #radio .studio-player-main{grid-template-columns:115px minmax(0,1fr)}
   #radio .studio-play-wrap{grid-column:1/-1}
@@ -111,6 +111,34 @@ body{padding-bottom:105px}
   .radio-mini .radio-mini-drawer-grid small{font-size:8px;letter-spacing:0}
   .radio-mini .radio-mini-drawer-grid strong{font-size:10px}
   .radio-mini .radio-mini-drawer-grid span{font-size:9px}
-  body{padding-bottom:85px}
+  body{padding-bottom:78px}
 }
 @media(prefers-reduced-motion:reduce){#radio .studio-player *{animation:none!important}}
+
+
+/* RADIO MÉNDEZ 1.6.17 — mini reproductor flotante centrado y compacto */
+.radio-mini{left:50%!important;right:auto!important;bottom:14px!important;transform:translateX(-50%)!important;display:block!important;width:min(520px,calc(100vw - 18px))!important;max-width:520px!important;padding:10px 14px calc(10px + env(safe-area-inset-bottom))!important;border:1px solid rgba(67,182,255,.42)!important;border-top:1px solid rgba(67,182,255,.42)!important;border-radius:18px!important;background:rgba(5,18,43,.95)!important;backdrop-filter:blur(14px)!important;box-shadow:0 16px 40px rgba(0,0,0,.38)!important}
+.radio-mini .radio-mini-bar{min-height:0!important;display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;align-items:center!important;gap:12px!important}
+.radio-mini .radio-mini-label{min-width:0!important;max-width:none!important;display:flex!important;align-items:center!important;gap:10px!important;text-decoration:none!important}
+.radio-mini .radio-mini-label img{flex:0 0 42px!important;width:42px!important;height:42px!important;border-radius:12px!important;background:rgba(18,65,118,.7)!important;border:1px solid rgba(87,182,249,.33)!important;object-fit:contain!important;padding:3px}
+.radio-mini .radio-mini-title{display:block;font-size:14px!important;line-height:1.05;letter-spacing:.35px;color:#fff}
+.radio-mini .radio-mini-sub{display:block;font-size:10px!important;color:#7effb0;line-height:1.2;margin-top:3px}
+.radio-mini .radio-mini-program,.radio-mini .radio-mini-signal,.radio-mini .radio-mini-volume,.radio-mini .radio-mini-expand,.radio-mini .radio-mini-drawer{display:none!important}
+.radio-mini .radio-mini-controls{display:flex!important;align-items:center!important;gap:8px!important;flex:none!important}
+.radio-mini .mini-wave{display:flex!important;width:26px!important;height:24px!important;opacity:.75}
+.radio-mini .mini-wave i{width:3px!important}
+.radio-mini .radio-mini-play{width:42px!important;height:42px!important;border-radius:50%!important;border:1px solid rgba(118,255,176,.55)!important;background:linear-gradient(145deg,rgba(25,201,141,.28),rgba(11,133,188,.38))!important;color:#f6fffb!important;font-size:19px!important;box-shadow:0 6px 18px rgba(33,236,157,.14)!important}
+.radio-mini .radio-mini-utility{width:38px!important;height:38px!important;min-width:38px!important;border-radius:50%!important;border:1px solid rgba(114,181,234,.27)!important;background:rgba(18,59,105,.35)!important;color:#dff4ff!important;font-size:18px!important}
+.radio-mini .radio-mini-play:hover,.radio-mini .radio-mini-utility:hover{transform:translateY(-1px)}
+@media(max-width:560px){
+  .radio-mini{bottom:10px!important;width:min(420px,calc(100vw - 12px))!important;padding:9px 10px calc(9px + env(safe-area-inset-bottom))!important;border-radius:16px!important}
+  .radio-mini .radio-mini-bar{gap:8px!important}
+  .radio-mini .radio-mini-label{gap:8px!important}
+  .radio-mini .radio-mini-label img{flex-basis:38px!important;width:38px!important;height:38px!important}
+  .radio-mini .radio-mini-title{font-size:12px!important}
+  .radio-mini .radio-mini-sub{font-size:9px!important}
+  .radio-mini .radio-mini-controls{gap:6px!important}
+  .radio-mini .mini-wave{width:22px!important;height:20px!important}
+  .radio-mini .radio-mini-play{width:38px!important;height:38px!important;font-size:17px!important}
+  .radio-mini .radio-mini-utility{width:34px!important;height:34px!important;min-width:34px!important;font-size:16px!important}
+}

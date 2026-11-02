@@ -1236,24 +1236,24 @@
 </section>
 
 </main>
-<footer class="site-footer-clean"><div class="container footer-row"><span><strong>RADIO MÉNDEZ</strong> · ¡La radio que te mueve!</span><span>© <span id="year"></span> · Todos los derechos reservados · <strong class="version-label">v1.6.16</strong></span></div></footer>
+<footer class="site-footer-clean"><div class="container footer-row"><span><strong>RADIO MÉNDEZ</strong> · ¡La radio que te mueve!</span><span>© <span id="year"></span> · Todos los derechos reservados · <strong class="version-label">v1.6.17</strong></span></div></footer>
 
-<div class="radio-mini" id="radio-mini" aria-label="Reproductor permanente Radio Méndez" hidden>
+<div class="radio-mini" id="radio-mini" aria-label="Reproductor flotante Radio Méndez" hidden>
   <div class="radio-mini-bar">
-   <a class="radio-mini-label" href="#inicio" aria-label="Ir a Radio Méndez"><img id="radio-mini-art" src="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png" alt=""><span><strong class="radio-mini-title">RADIO MÉNDEZ</strong><small class="radio-mini-sub" id="radio-mini-sub">¡La radio que te mueve!</small><small class="radio-mini-program" id="radio-mini-program">Programación de Radio Méndez</small></span></a>
-   <span class="radio-mini-signal" id="radio-mini-signal" data-state="standby">LISTA</span>
+   <a class="radio-mini-label" href="#inicio" aria-label="Ir a Radio Méndez">
+     <img id="radio-mini-art" src="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png" alt="">
+     <span>
+       <strong class="radio-mini-title">RADIO MÉNDEZ</strong>
+       <small class="radio-mini-sub" id="radio-mini-sub">¡La radio que te mueve!</small>
+       <small class="radio-mini-program" id="radio-mini-program">Programación de Radio Méndez</small>
+     </span>
+   </a>
    <div class="radio-mini-controls">
-    <button class="radio-mini-utility" id="radio-mini-mute" type="button" title="Silenciar" aria-label="Silenciar radio">🔊</button>
+    <button id="radio-mini-mute" type="button" hidden aria-hidden="true">🔊</button>
+    <input class="radio-mini-volume" id="radio-mini-volume" type="range" min="0" max="100" value="80" aria-label="Volumen del reproductor permanente" hidden aria-hidden="true">
     <button class="radio-mini-play" id="radio-mini-play" type="button" aria-label="Reproducir radio" aria-pressed="false">▶</button>
-    <input class="radio-mini-volume" id="radio-mini-volume" type="range" min="0" max="100" value="80" aria-label="Volumen del reproductor permanente">
-    <button type="button" class="radio-mini-utility" id="radio-mini-schedule-toggle" aria-label="Ver programación" aria-expanded="false" aria-controls="radio-mini-drawer" title="Ver programación">☷</button>
-    <button type="button" class="radio-mini-utility share-action" id="radio-mini-share" aria-label="Compartir Radio Méndez" title="Compartir radio">↗</button>
-    <button type="button" class="radio-mini-utility" id="radio-mini-reconnect" aria-label="Reconectar radio" title="Reconectar radio">↻</button>
-    <a class="radio-mini-utility radio-mini-expand" href="#inicio" aria-label="Ver reproductor completo" title="Ver reproductor completo">⛶</a>
+    <button type="button" class="radio-mini-utility" id="radio-mini-reconnect" aria-label="Actualizar señal" title="Actualizar señal">↻</button>
    </div>
-  </div>
-  <div class="radio-mini-drawer" id="radio-mini-drawer" hidden>
-     <div class="radio-mini-drawer-grid"><div><small>‹ ANTERIOR</small><strong id="mini-prev-title">Programa anterior</strong><span id="mini-prev-time">--</span></div><div><small>PROGRAMA ACTUAL</small><strong id="mini-current-title">Radio Méndez</strong><span id="mini-current-time">--</span></div><div><small>PRÓXIMO ›</small><strong id="mini-next-title">Próximo programa</strong><span id="mini-next-time">--</span></div></div>
   </div>
 </div>
 <audio id="radio-audio" preload="none" playsinline></audio>
