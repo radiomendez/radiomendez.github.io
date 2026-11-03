@@ -1,7 +1,7 @@
 /* Radio Méndez 1.6.15 — Inicio ordenado y reproductor compacto.
    No altera la identidad de Méndez TV ni las secciones restantes. */
 body{padding-bottom:0!important}
-.radio-mini{display:none!important}
+/* v1.6.18: la barra flotante permanece visible en todas las secciones */
 #inicio.portal-home-compact{padding:26px 0 70px}
 #inicio .home-mixed-showcase{min-width:0;margin:0 0 26px}
 #inicio .home-banners-heading{display:flex;align-items:baseline;flex-wrap:wrap;column-gap:14px;row-gap:5px;margin:0 0 12px}

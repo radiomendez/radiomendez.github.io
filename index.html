@@ -14,7 +14,7 @@
   <meta property="og:image" content="https://radiomendez.github.io/assets/vista-previa-mendez-tv-radio-online-v1.5.5.jpg">
   <link rel="icon" type="image/png" href="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png">
   <link rel="apple-touch-icon" href="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png">
-  <meta name="app-version" content="1.6.16">
+  <meta name="app-version" content="1.6.18">
   <title>Radio Méndez | ¡La radio que te mueve!</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -798,8 +798,9 @@
     @media(max-width:580px){.about-page{padding-top:18px}.about-shell{border-radius:16px}.about-content{padding:22px 19px 27px}.about-content h1{font-size:28px}.about-content p{line-height:1.75}}
 </style>
   <link rel="stylesheet" href="./radio-visual.css?v=1.6.14">
-  <link rel="stylesheet" href="./reproductor-1614.css?v=1.6.14">
-  <link rel="stylesheet" href="./inicio-compacto-1615.css?v=1.6.16">
+  <link rel="stylesheet" href="./reproductor-1614.css?v=1.6.18">
+  <link rel="stylesheet" href="./inicio-compacto-1615.css?v=1.6.18">
+  <link rel="stylesheet" href="./mini-flotante-1618.css?v=1.6.18">
   <script src="./config.js?v=1.6.5-stream8474"></script>
   <script src="./top10.js?v=1.3.2"></script>
   <script src="./videos.js?v=1.3.2"></script>
@@ -1236,9 +1237,9 @@
 </section>
 
 </main>
-<footer class="site-footer-clean"><div class="container footer-row"><span><strong>RADIO MÉNDEZ</strong> · ¡La radio que te mueve!</span><span>© <span id="year"></span> · Todos los derechos reservados · <strong class="version-label">v1.6.17</strong></span></div></footer>
+<footer class="site-footer-clean"><div class="container footer-row"><span><strong>RADIO MÉNDEZ</strong> · ¡La radio que te mueve!</span><span>© <span id="year"></span> · Todos los derechos reservados · <strong class="version-label">v1.6.18</strong></span></div></footer>
 
-<div class="radio-mini" id="radio-mini" aria-label="Reproductor flotante Radio Méndez" hidden>
+<div class="radio-mini" id="radio-mini" aria-label="Reproductor flotante Radio Méndez">
   <div class="radio-mini-bar">
    <a class="radio-mini-label" href="#inicio" aria-label="Ir a Radio Méndez">
      <img id="radio-mini-art" src="./assets/icon-mendez-tv-radio-online-192-v1.5.5.png" alt="">
@@ -1249,6 +1250,7 @@
      </span>
    </a>
    <div class="radio-mini-controls">
+    <span class="mini-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
     <button id="radio-mini-mute" type="button" hidden aria-hidden="true">🔊</button>
     <input class="radio-mini-volume" id="radio-mini-volume" type="range" min="0" max="100" value="80" aria-label="Volumen del reproductor permanente" hidden aria-hidden="true">
     <button class="radio-mini-play" id="radio-mini-play" type="button" aria-label="Reproducir radio" aria-pressed="false">▶</button>
@@ -1300,8 +1302,8 @@
  playBtn.addEventListener('click',toggle);
  heroPlay.addEventListener('click',toggle);
  miniPlay.addEventListener('click',toggle);
- // Reproductor visible exclusivamente en Inicio; el audio sigue siendo único.
- miniBar.hidden=true;
+ // Barra siempre visible en todas las secciones; comparte el único audio.
+ miniBar.hidden=false;
  if(!stream)setStatus('Configura tu URL pública HTTPS de audio en config.js.',true);
  $('reconnect').addEventListener('click',()=>{if(document.querySelector('#video-stage iframe'))document.getElementById('video-reset').click();attempts=0;cancelRetry();audio.pause();setPlaying(false);start(true)});
  audio.addEventListener('playing',()=>{attempts=0;cancelRetry();setPlaying(true);setStatus('Estás escuchando Radio Méndez en vivo.')});
@@ -1602,7 +1604,7 @@
   $('donate-bank-fallback').href=donationWhatsapp+'?text='+encodeURIComponent('Hola, quisiera los datos para apoyar a Radio Méndez por transferencia.');
  }
 
- if('serviceWorker' in navigator && location.protocol==='https:'){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=1.6.14').catch(()=>{}))}
+ if('serviceWorker' in navigator && location.protocol==='https:'){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=1.6.18').catch(()=>{}))}
 })();
 </script>
 
@@ -1713,8 +1715,8 @@
  tick();setInterval(tick,20000);
 })();
 </script>
-<script src="./mejoras.js?v=1.6.16"></script>
-<script src="./radio-visual.js?v=1.6.14"></script>
+<script src="./mejoras.js?v=1.6.18"></script>
+<script src="./radio-visual.js?v=1.6.18"></script>
 <script src="./reproductor-1614.js?v=1.6.14"></script>
 </body>
 </html>

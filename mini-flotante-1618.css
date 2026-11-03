@@ -1,0 +1,74 @@
+/* RADIO MÉNDEZ v1.6.18 — Reparación permanente del reproductor flotante. */
+/* A diferencia de v1.6.17, ningún estilo de Inicio debe ocultar la barra. */
+body{padding-bottom:calc(104px + env(safe-area-inset-bottom))!important}
+#radio-mini.radio-mini:not([hidden]){
+  position:fixed!important;
+  box-sizing:border-box!important;
+  z-index:9999!important;
+  display:block!important;
+  left:50%!important;
+  right:auto!important;
+  top:auto!important;
+  bottom:calc(13px + env(safe-area-inset-bottom))!important;
+  transform:translateX(-50%)!important;
+  width:min(492px,calc(100vw - 24px))!important;
+  max-width:492px!important;
+  margin:0!important;
+  padding:10px 13px!important;
+  border:1px solid rgba(72,188,255,.55)!important;
+  border-radius:20px!important;
+  background:linear-gradient(115deg,rgba(5,19,48,.98),rgba(9,43,76,.97))!important;
+  box-shadow:0 14px 42px rgba(0,0,0,.50),0 0 22px rgba(18,131,242,.18)!important;
+  backdrop-filter:blur(16px)!important;
+  -webkit-backdrop-filter:blur(16px)!important;
+  color:#fff!important;
+}
+#radio-mini.radio-mini[hidden]{display:none!important}
+#radio-mini .radio-mini-bar{
+  display:flex!important;align-items:center!important;justify-content:space-between!important;
+  gap:10px!important;width:100%!important;min-height:0!important;
+}
+#radio-mini .radio-mini-label{display:flex!important;flex:1 1 0!important;min-width:0!important;align-items:center!important;gap:10px!important;text-decoration:none!important;color:#fff!important;}
+#radio-mini .radio-mini-label img{
+  flex:0 0 44px!important;width:44px!important;height:44px!important;
+  object-fit:contain!important;background:transparent!important;border:0!important;
+  border-radius:50%!important;padding:0!important;box-shadow:none!important;
+}
+#radio-mini .radio-mini-title{display:block!important;color:#fff!important;font-size:14px!important;line-height:1.14!important;letter-spacing:.3px!important;white-space:nowrap!important;}
+#radio-mini .radio-mini-sub{display:block!important;color:#80f9ac!important;font-size:10px!important;margin-top:2px!important;}
+#radio-mini .radio-mini-program,#radio-mini .radio-mini-signal,#radio-mini .radio-mini-volume{display:none!important}
+#radio-mini .radio-mini-controls{display:flex!important;flex:0 0 auto!important;align-items:center!important;justify-content:flex-end!important;gap:9px!important;}
+#radio-mini .radio-mini-controls .mini-wave{display:flex!important;gap:3px!important;align-items:center!important;justify-content:center!important;width:30px!important;height:25px!important;margin:0 3px 0 0!important;opacity:.66!important;}
+#radio-mini .radio-mini-controls .mini-wave.is-playing{opacity:1!important}
+#radio-mini .mini-wave i{display:block!important;height:50%;width:3px;border-radius:6px;background:#56ff98}
+#radio-mini .radio-mini-play{
+  display:grid!important;place-items:center!important;
+  flex:0 0 44px!important;width:44px!important;height:44px!important;
+  padding:0!important;border-radius:50%!important;border:1px solid rgba(116,255,177,.65)!important;
+  background:linear-gradient(135deg,#47ef9c,#19b5b4)!important;
+  color:#052a32!important;font-size:20px!important;font-weight:900!important;
+  box-shadow:0 4px 18px rgba(44,221,149,.20)!important;cursor:pointer;
+}
+#radio-mini #radio-mini-reconnect{
+  display:grid!important;place-items:center!important;
+  flex:0 0 38px!important;width:38px!important;height:38px!important;min-width:38px!important;
+  padding:0!important;border-radius:50%!important;border:1px solid rgba(105,193,249,.38)!important;
+  background:rgba(22,83,139,.47)!important;color:#e7f8ff!important;
+  font-size:24px!important;line-height:1!important;cursor:pointer;
+}
+#radio-mini #radio-mini-mute,#radio-mini #radio-mini-volume{display:none!important}
+#radio-mini .radio-mini-play:focus-visible,#radio-mini #radio-mini-reconnect:focus-visible,#radio-mini .radio-mini-label:focus-visible{outline:2px solid #87fbc9;outline-offset:3px}
+@media(max-width:530px){
+  body{padding-bottom:calc(92px + env(safe-area-inset-bottom))!important}
+  #radio-mini.radio-mini:not([hidden]){width:calc(100vw - 16px)!important;max-width:450px!important;bottom:calc(8px + env(safe-area-inset-bottom))!important;padding:8px 10px!important;border-radius:16px!important}
+  #radio-mini .radio-mini-bar{gap:7px!important}
+  #radio-mini .radio-mini-label{gap:7px!important}
+  #radio-mini .radio-mini-label img{flex-basis:38px!important;width:38px!important;height:38px!important}
+  #radio-mini .radio-mini-title{font-size:12px!important}
+  #radio-mini .radio-mini-sub{font-size:9px!important}
+  #radio-mini .radio-mini-controls{gap:7px!important}
+  #radio-mini .radio-mini-controls .mini-wave{width:23px!important;height:22px!important;gap:2px!important}
+  #radio-mini .radio-mini-play{flex-basis:38px!important;width:38px!important;height:38px!important;font-size:18px!important}
+  #radio-mini #radio-mini-reconnect{flex-basis:34px!important;width:34px!important;height:34px!important;min-width:34px!important;font-size:21px!important}
+}
+@media(prefers-reduced-motion:reduce){#radio-mini .mini-wave i{animation:none!important}}

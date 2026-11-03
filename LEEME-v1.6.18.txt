@@ -1,0 +1,9 @@
+RADIO MÉNDEZ — v1.6.18
+
+Se corrigió que el mini reproductor no aparecía por tres bloqueos: HTML hidden, JavaScript miniBar.hidden=true y CSS display:none!important.
+Ahora permanece visible y centrado abajo en todas las secciones, incluso antes de dar Play.
+Controles visibles: icono, nombre, ondas, PLAY/PAUSA y reconectar.
+No se crea otro audio y no cambia la señal del servidor.
+
+PARA ACTUALIZAR: extraer el ZIP y subir los archivos incluidos a la raíz de GitHub. IMPORTANTE: subir ambos CSS (reproductor-1614.css, inicio-compacto-1615.css) y mini-flotante-1618.css. Si se omite el CSS de Inicio, la barra podría ocultarse.
+No reemplazar config.js.

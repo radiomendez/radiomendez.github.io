@@ -22,9 +22,12 @@
  const mini=$('radio-mini');
  let miniSpectrum=null;
  if(mini){
-   miniSpectrum=document.createElement('span');miniSpectrum.className='mini-wave';miniSpectrum.setAttribute('aria-hidden','true');
-   miniSpectrum.innerHTML='<i></i><i></i><i></i><i></i><i></i>';
-   mini.querySelector('.radio-mini-controls')?.prepend(miniSpectrum);
+   miniSpectrum=mini.querySelector('.mini-wave');
+   if(!miniSpectrum){
+     miniSpectrum=document.createElement('span');miniSpectrum.className='mini-wave';miniSpectrum.setAttribute('aria-hidden','true');
+     miniSpectrum.innerHTML='<i></i><i></i><i></i><i></i><i></i>';
+     mini.querySelector('.radio-mini-controls')?.prepend(miniSpectrum);
+   }
  }
  const updateWave=()=>{
    const playing=!audio.paused && !audio.ended && audio.readyState>=2;
