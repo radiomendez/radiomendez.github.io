@@ -1,2 +1,4 @@
-Radio Méndez v1.6.19
-Cambios: reproductor interno más compacto, espectro avanzado sin RGB y logo actualizado.
+Radio Méndez · v1.6.20
+Fecha: 2026-11-02
+Cambios: Ranking simplificado, sin emojis ni encabezados repetidos; columnas y textos alineados.
+Streaming: sin cambios (conservar config.js).

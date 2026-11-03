@@ -1,0 +1,11 @@
+RADIO MÉNDEZ v1.6.20 — RANKING ORDENADO
+
+Cambios:
+- Acceso directo a las dos listas Top 10 sin párrafos ni botones duplicados.
+- Eliminados emojis de Ecuador y mundo.
+- Encabezados cortos y columnas alineadas.
+- El contenido y los enlaces de las 20 canciones no se modificaron.
+- Información de fuentes condensada en una sola línea.
+
+EN GITHUB: reemplazar index.html, sw.js y VERSION.txt; subir ranking-limpio-1620.css y LEEME-v1.6.20.txt.
+NO reemplazar config.js.
