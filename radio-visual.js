@@ -8,10 +8,10 @@
  if(!audio||!spectrum||!wave)return;
  const fragment=document.createDocumentFragment();
  // Ondas decorativas: alturas diferentes. No se procesan ni interceptan los datos de SHOUTcast.
- for(let i=0;i<44;i++){
+ for(let i=0;i<60;i++){
    const bar=document.createElement('i');bar.className='spectrum-bar';
-   const distance=Math.abs(i-21.5)/21.5;
-   const cap=Math.round(27+(1-distance*.55)*((i*17+31)%67));
+   const distance=Math.abs(i-29.5)/29.5;
+   const cap=Math.round(30+(1-distance*.45)*((i*19+37)%60));
    bar.style.setProperty('--max-h',cap+'%');
    bar.style.setProperty('--rest-h',Math.max(7,Math.round(cap*.17))+'%');
    bar.style.setProperty('--bar-speed',(0.42+((i*13)%29)/45).toFixed(2)+'s');
@@ -36,18 +36,9 @@
  };
  ['playing','pause','ended','waiting','stalled','error'].forEach(event=>audio.addEventListener(event,updateWave));
  updateWave();
- const neon=$('spectrum-neon'),rgb=$('spectrum-rgb');
- function setTheme(theme){
-   const useRGB=theme==='rgb';spectrum.dataset.theme=useRGB?'rgb':'neon';
-   neon?.setAttribute('aria-pressed',String(!useRGB));
-   rgb?.setAttribute('aria-pressed',String(useRGB));
-   try{localStorage.setItem('radioMendezSpectrum',useRGB?'rgb':'neon')}catch(_){}
- }
- neon?.addEventListener('click',()=>setTheme('neon'));
- rgb?.addEventListener('click',()=>setTheme('rgb'));
- try{if(localStorage.getItem('radioMendezSpectrum')==='rgb')setTheme('rgb')}catch(_){}
+ spectrum.dataset.theme='advanced';
 
- const fallback='./assets/icon-mendez-tv-radio-online-192-v1.5.5.png';
+ const fallback='./assets/logo-mendez-tv-radio-online-v1.6.19.png';
  const programs={
    morning:{name:'La mañana que te mueve',host:'Radio Méndez',start:9*60,end:12*60,img:'./assets/programa-la-manana-que-te-mueve-v1.6.5.png'},
    midday:{name:'El Vacilón del Mediodía',host:'Radio Méndez',start:12*60,end:14*60,img:'./assets/programa-el-vacilon-del-mediodia-v1.6.6.png'},

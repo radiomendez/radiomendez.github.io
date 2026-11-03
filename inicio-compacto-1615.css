@@ -149,3 +149,51 @@ body{padding-bottom:0!important}
 @keyframes homeBannerSlide{from{opacity:.28;transform:translateX(16px)}to{opacity:1;transform:translateX(0)}}
 #inicio .home-primary-carousel .sponsor-slide.is-changing{animation:homeBannerSlide .42s ease both}
 @media(prefers-reduced-motion:reduce){#inicio .home-primary-carousel .sponsor-slide.is-changing{animation:none!important}}
+
+
+/* v1.6.19 · reproductor en inicio más compacto, sin RGB y con espectro avanzado */
+#inicio .home-radio-layout{grid-template-columns:minmax(0,1fr) minmax(330px,430px)!important;align-items:start!important}
+#inicio .radio-card.studio-player.compact-player{max-width:430px!important;margin-left:auto!important;padding:12px 12px 10px!important;border-radius:18px!important}
+#inicio .studio-player .card-head{margin-bottom:8px!important}
+#inicio .studio-player .card-head small{font-size:8px!important;letter-spacing:.7px!important}
+#inicio .studio-player .live-pill{font-size:8px!important;padding:5px 8px!important}
+#inicio .studio-player-main{grid-template-columns:58px minmax(0,1fr) auto!important;gap:10px!important}
+#inicio .studio-player .vinyl,#inicio .studio-player .vinyl.is-playing{width:58px!important;height:58px!important;border-radius:12px!important}
+#inicio .studio-player .vinyl img{padding:2px!important}
+#inicio .studio-program-info .track-title{font-size:15px!important;margin:0 0 2px!important}
+#inicio .studio-program-info .track-sub{font-size:10px!important;margin:0 0 5px!important;color:#cde7f8!important}
+#inicio .studio-program-info .now-schedule{padding:5px 7px!important;border-radius:12px!important;background:rgba(0,20,46,.62)!important}
+#inicio .studio-program-info .now-schedule-info small{font-size:7px!important;letter-spacing:.55px!important}
+#inicio .studio-program-info .now-schedule-info strong{font-size:10px!important;line-height:1.25!important}
+#inicio .studio-program-info .now-schedule-info span{font-size:9px!important}
+#inicio .studio-play-wrap .player-control{gap:5px!important}
+#inicio .studio-play-wrap .round{width:28px!important;height:28px!important;padding:5px!important}
+#inicio .studio-play-wrap .play-big{width:48px!important;height:48px!important}
+#inicio .studio-player .radio-spectrum{margin:8px 0 6px!important;padding:8px 9px!important;border-radius:12px!important;background:linear-gradient(180deg,rgba(3,30,18,.55),rgba(1,17,31,.72))!important;border:1px solid rgba(93,255,176,.22)!important}
+#inicio .studio-player .radio-spectrum-top{margin-bottom:5px!important;display:flex!important;align-items:center!important;justify-content:space-between!important}
+#inicio .studio-player .radio-spectrum-top>span{font-size:8px!important;font-weight:900!important;letter-spacing:.8px!important;color:#b5ffd4!important}
+#inicio .radio-theme-chooser{display:none!important}
+#inicio .studio-player .spectrum-wave{height:30px!important;display:flex!important;align-items:flex-end!important;gap:2px!important}
+#inicio .studio-player .spectrum-wave .spectrum-bar{flex:1 1 auto!important;min-width:2px!important;width:auto!important;border-radius:999px 999px 0 0!important;background:linear-gradient(180deg,#9dffe0 0%,#53f3a5 30%,#1fd17a 64%,rgba(31,209,122,.18) 100%)!important;box-shadow:0 0 12px rgba(100,255,170,.24)!important;opacity:.95!important}
+#inicio .studio-player-bottom{gap:7px!important}
+#inicio .studio-player-bottom .volume{min-width:90px!important;max-width:118px!important}
+#inicio .studio-player-bottom .volume input{width:64px!important}
+#inicio .studio-utility-buttons{margin-left:auto!important}
+#inicio #studio-share,#inicio #studio-expand{display:none!important}
+#inicio #studio-schedule-toggle{padding:6px 10px!important;min-height:30px!important;font-size:10px!important}
+#inicio .radio-card .status{display:none!important}
+#inicio .spectrum-led{display:inline-flex!important;width:7px!important;height:7px!important;border-radius:50%!important;background:#6bff95!important;box-shadow:0 0 10px rgba(107,255,149,.8)!important;margin-right:5px!important}
+@media(max-width:840px){
+  #inicio .home-radio-layout{grid-template-columns:1fr!important}
+  #inicio .radio-card.studio-player.compact-player{max-width:100%!important;margin-left:0!important}
+}
+@media(max-width:560px){
+  #inicio .radio-card.studio-player.compact-player{padding:10px 10px 9px!important}
+  #inicio .studio-player-main{grid-template-columns:50px minmax(0,1fr) 44px!important;gap:6px!important}
+  #inicio .studio-player .vinyl,#inicio .studio-player .vinyl.is-playing{width:50px!important;height:50px!important}
+  #inicio .studio-program-info .track-title{font-size:13px!important}
+  #inicio .studio-program-info .track-sub{font-size:9px!important}
+  #inicio .studio-program-info .now-schedule-info strong{font-size:9px!important}
+  #inicio .studio-player .spectrum-wave{height:24px!important;gap:1.5px!important}
+  #inicio .studio-play-wrap .play-big{width:42px!important;height:42px!important}
+}

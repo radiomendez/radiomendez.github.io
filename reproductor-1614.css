@@ -142,3 +142,7 @@ body{padding-bottom:96px}
   .radio-mini .radio-mini-play{width:38px!important;height:38px!important;font-size:17px!important}
   .radio-mini .radio-mini-utility{width:34px!important;height:34px!important;min-width:34px!important;font-size:16px!important}
 }
+
+
+/* v1.6.19 · compatibilidad de logotipo nuevo en reproductores */
+.radio-mini-label img,.vinyl img{object-fit:contain!important}

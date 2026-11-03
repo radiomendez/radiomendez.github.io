@@ -1,4 +1,2 @@
-Radio Méndez · v1.6.18
-Fecha: 2026-11-02
-Corrección: reproductor flotante centrado siempre visible; reparados bloqueos HTML, JavaScript y CSS.
-Streaming: sin cambios; conservar config.js del servidor contratado.
+Radio Méndez v1.6.19
+Cambios: reproductor interno más compacto, espectro avanzado sin RGB y logo actualizado.
