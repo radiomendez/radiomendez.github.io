@@ -1,0 +1,24 @@
+RADIO MÉNDEZ · ACTUALIZACIÓN v1.6.21
+
+Se integraron los 9 banners PNG originales (1920 × 250) enviados por el usuario:
+  Méndez Despierta, La mañana que te mueve, El Vacilón del Mediodía,
+  Tardes Tropicales, A Todo Ritmo, Calentando Motores,
+  El Vacile de Villa, Sábado de Vacilón y Domingo de Clásicos.
+
+En la sección RADIO MÉNDEZ / Inicio, el carrusel alterna Programa / Auspiciante
+cada 3 segundos. Funciona con flechas, contador y deslizamiento táctil.
+Se conservan los 3 banners existentes de auspiciantes y el reproductor.
+
+INSTALACIÓN EN GITHUB PAGES
+Descomprime el ZIP y sube su CONTENIDO a la raíz del repositorio
+con la estructura de carpetas intacta. Sobrescribe estos archivos:
+- index.html
+- mejoras.js
+- banners-programacion-1621.css
+- sw.js
+- VERSION.txt (informativo)
+- assets/programacion/*.png (los nueve archivos nuevos)
+
+NO reemplaces config.js: se conserva la señal HTTPS del puerto 8474.
+No borres la carpeta assets/auspiciantes, ni modifiques PayPal.
+Después de publicar, actualiza con Ctrl+F5.

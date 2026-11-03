@@ -1,4 +1,4 @@
-Radio Méndez · v1.6.20
+Radio Méndez · v1.6.21
 Fecha: 2026-11-02
-Cambios: Ranking simplificado, sin emojis ni encabezados repetidos; columnas y textos alineados.
-Streaming: sin cambios (conservar config.js).
+Cambios: se integran los nueve banners originales de programación (1920×250) al carrusel de Inicio, alternando con auspiciantes cada 3 segundos.
+Streaming y PayPal: sin cambios.

@@ -1,0 +1,53 @@
+/* RADIO MÉNDEZ · v1.6.21 · banners oficiales de programación de 1920 × 250 */
+#inicio .home-primary-carousel .sponsor-carousel{padding:9px!important;overflow:hidden}
+#inicio .home-primary-carousel .sponsor-stage{
+  width:100%; height:auto!important; aspect-ratio:1920/250; min-height:92px;
+  border-radius:14px; overflow:hidden; background:#082759;
+}
+#inicio .home-primary-carousel .sponsor-slide{
+  display:flex;align-items:center;justify-content:center;
+  width:100%;height:100%;min-height:0;overflow:hidden;
+}
+#inicio .home-primary-carousel .sponsor-slide.is-program-banner{
+  padding:0!important;gap:0!important;
+  background:linear-gradient(115deg,#082759,#08418d 48%,#082759);
+  text-decoration:none;
+}
+#inicio .home-primary-carousel .sponsor-slide.is-program-banner img,
+#inicio .home-primary-carousel .sponsor-slide.is-sponsor img{
+  width:100%!important;height:100%!important;max-width:none!important;
+  object-fit:contain!important;object-position:center!important;
+  aspect-ratio:auto!important;order:unset!important;
+  border:0!important;border-radius:0!important;padding:0!important;
+  filter:none!important;
+}
+#inicio .home-primary-carousel .sponsor-slide.is-sponsor{background:#e5f0ff}
+#inicio .home-primary-carousel .sponsor-bar{min-height:39px;gap:10px;flex-wrap:nowrap}
+#inicio .home-primary-carousel .sponsor-brand{flex:1;min-width:0;font-size:12px;letter-spacing:.1px}
+#inicio .home-primary-carousel .sponsor-tools{max-width:none;gap:6px;flex:none}
+#inicio .home-primary-carousel .sponsor-counter{
+  display:flex;align-items:center;justify-content:center;
+  min-width:52px;font-size:11px;font-weight:850;color:#c5e5ff;
+  font-variant-numeric:tabular-nums;
+}
+#inicio .home-primary-carousel .sponsor-arrow{
+  width:36px;height:34px;border-radius:10px;font-size:25px;
+  background:rgba(25,121,218,.28);border-color:rgba(94,190,255,.40);
+}
+#inicio .home-primary-carousel .sponsor-arrow:focus-visible,
+#inicio .home-primary-carousel .sponsor-slide:focus-visible{
+  outline:2px solid #65d6ff;outline-offset:-2px;
+}
+@media(max-width:660px){
+  #inicio .home-primary-carousel .sponsor-carousel{padding:6px!important;border-radius:14px}
+  #inicio .home-primary-carousel .sponsor-stage{min-height:86px;border-radius:9px}
+  #inicio .home-primary-carousel .sponsor-bar{padding:8px 2px 0;gap:6px}
+  #inicio .home-primary-carousel .sponsor-brand{font-size:10px;line-height:1.22;white-space:normal;max-width:none}
+  #inicio .home-primary-carousel .sponsor-tools{max-width:none;gap:3px}
+  #inicio .home-primary-carousel .sponsor-arrow{width:32px;height:32px;font-size:21px}
+  #inicio .home-primary-carousel .sponsor-counter{min-width:42px;font-size:10px}
+}
+@media(prefers-reduced-motion:reduce){
+  #inicio .home-primary-carousel .sponsor-slide.is-changing,
+  #inicio .home-primary-carousel .sponsor-slide.is-changing img{animation:none!important}
+}

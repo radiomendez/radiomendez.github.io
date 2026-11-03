@@ -42,12 +42,24 @@
   const sponsors=(Array.isArray(window.MENDEZ_AUSPICIANTES)?window.MENDEZ_AUSPICIANTES:[])
     .filter(item=>item && typeof item.logo==='string' && validImage.test(item.logo.trim()) && !item.logo.includes('..'))
     .map(item=>({type:'sponsor',name:String(item.nombre||'Auspiciante'),image:item.logo.trim(),url:safeLink(item.url)}));
+  // Banners originales del usuario: 1920 × 250 PNG.
   const programs=[
-   {type:'program',name:'La mañana que te mueve',schedule:'09h00 – 12h00',info:'Música para comenzar el día',image:'./assets/programa-la-manana-que-te-mueve-v1.6.5.png',url:'#programacion-radio'},
-   {type:'program',name:'El Vacilón del Mediodía',schedule:'12h00 – 14h00',info:'Ritmo tropical y entretenimiento',image:'./assets/programa-el-vacilon-del-mediodia-v1.6.6.png',url:'#programacion-radio'},
-   {type:'program',name:'El Vacile de Villa',schedule:'Lunes a viernes · 20h00 – 22h00',info:'Con Ángel Villa DJ · Villa Show',image:'./assets/programa-el-vacile-de-villa-v1.5.9.png',url:'#programacion-radio'}
+   {type:'program-banner',name:"Méndez Despierta",schedule:"08h00–09h00",image:'./assets/programacion/01_Mendez_Despierta.png',url:'#programacion-radio'},
+   {type:'program-banner',name:"La mañana que te mueve",schedule:"09h00–12h00",image:'./assets/programacion/02_La_Manana_Que_Te_Mueve.png',url:'#programacion-radio'},
+   {type:'program-banner',name:"El Vacilón del Mediodía",schedule:"12h00–14h00",image:'./assets/programacion/03_El_Vacilon_Del_Mediodia.png',url:'#programacion-radio'},
+   {type:'program-banner',name:"Tardes Tropicales",schedule:"14h00–17h00",image:'./assets/programacion/04_Tardes_Tropicales.png',url:'#programacion-radio'},
+   {type:'program-banner',name:"A Todo Ritmo",schedule:"17h00–19h00",image:'./assets/programacion/05_A_Todo_Ritmo.png',url:'#programacion-radio'},
+   {type:'program-banner',name:"Calentando Motores",schedule:"19h00–20h00",image:'./assets/programacion/06_Calentando_Motores.png',url:'#programacion-radio'},
+   {type:'program-banner',name:"El Vacile de Villa",schedule:"20h00–22h00 · Lunes a viernes",image:'./assets/programacion/07_El_Vacile_De_Villa.png',url:'#programacion-radio'},
+   {type:'program-banner',name:"Sábado de Vacilón",schedule:"20h00–22h00 · Sábados",image:'./assets/programacion/08_Sabado_De_Vacilon.png',url:'#programacion-radio'},
+   {type:'program-banner',name:"Domingo de Clásicos",schedule:"20h00–22h00 · Domingos",image:'./assets/programacion/09_Domingo_De_Clasicos.png',url:'#programacion-radio'}
   ];
-  const mixed=[];for(let i=0;i<Math.max(programs.length,sponsors.length);i++){if(programs[i])mixed.push(programs[i]);if(sponsors[i])mixed.push(sponsors[i]);}
+  // Mantener la alternancia Programa / Auspiciante en toda la secuencia.
+  const mixed=[];
+  for(let i=0;i<programs.length;i++){
+    mixed.push(programs[i]);
+    if(sponsors.length)mixed.push(sponsors[i%sponsors.length]);
+  }
   const mounts=Array.from(document.querySelectorAll('[data-sponsor-carousel]'));
   mounts.forEach(mount=>{
     const home=mount.dataset.sponsorLocation==='inicio';
@@ -70,6 +82,7 @@
     const prev=document.createElement('button');prev.type='button';prev.className='sponsor-arrow';prev.textContent='‹';prev.setAttribute('aria-label','Banner anterior');
     const next=document.createElement('button');next.type='button';next.className='sponsor-arrow';next.textContent='›';next.setAttribute('aria-label','Banner siguiente');
     const dots=document.createElement('div');dots.className='sponsor-dots';
+    if(home&&items.length>12)dots.classList.add('sponsor-counter');
     let current=0,paused=false,downX=null;
     function render(animate=false){
       const item=items[current],url=item.url;
@@ -84,13 +97,15 @@
         const info=document.createElement('em');info.textContent=item.info;
         copy.append(tag,name,schedule,info);slide.append(copy);
       }
-      const img=document.createElement('img');img.src=item.image;img.alt=(item.type==='program'?'Afiche de ':'Banner publicitario de ')+item.name;
+      const img=document.createElement('img');img.src=item.image;img.alt=(item.type==='program-banner'||item.type==='program'?'Banner del programa ':'Banner publicitario de ')+item.name;
+      img.width=1920;img.height=250;img.decoding='async';
       img.loading=home?'eager':'lazy';slide.append(img);
-      stage.replaceChildren(slide);brand.textContent=(item.type==='program'?'PROGRAMA · ':'AUSPICIANTE · ')+item.name;
-      [...dots.children].forEach((dot,i)=>dot.setAttribute('aria-current',String(i===current)));
+      stage.replaceChildren(slide);brand.textContent=(item.type==='program-banner'||item.type==='program'?'PROGRAMA · ':'AUSPICIANTE · ')+item.name;
+      if(home&&items.length>12){dots.textContent=String(current+1).padStart(2,'0')+' / '+items.length;}
+      else [...dots.children].forEach((dot,i)=>dot.setAttribute('aria-current',String(i===current)));
     }
     function go(i){current=(i+items.length)%items.length;render(true)}
-    items.forEach((item,i)=>{
+    if(!(home&&items.length>12))items.forEach((item,i)=>{
       const dot=document.createElement('button');dot.type='button';dot.className='sponsor-dot';
       dot.setAttribute('aria-label','Ver '+item.name);dot.setAttribute('aria-current',String(i===0));
       dot.addEventListener('click',()=>go(i));dots.append(dot);
